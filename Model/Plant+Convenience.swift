@@ -30,7 +30,7 @@ extension Plant {
     }
     
     var plantRepresentation: PlantRepresentation {
-        return PlantRepresentation((id: id, nickName: nickName, species: species, h2oFrequency: h2oFrequency, userID: userID)
+        return PlantRepresentation(id: id, nickName: nickName, species: species, h2oFrequency: h2oFrequency, userID: userID, image: image)
     }
 }
 

@@ -10,22 +10,20 @@ import Foundation
 import UIKit
 
 
-class PlantRepresentation: Codable{
-    let id: Int64?
-    let nickName: String?
-    let species: String?
-    let h2oFrequency: String?
-    let userID: Int64?
-    let image: UIImage?
-    
+struct PlantRepresentation: Codable {
     enum CodingKeys: String, CodingKey{
         case id
         case nickName = "nickname"
         case species
         case h2oFrequency
         case userID = "user_id"
-        case image 
-        
+        case image
     }
+    let id: Int64?
+    let nickName: String?
+    let species: String?
+    let h2oFrequency: String?
+    let userID: Int64?
+    let image: String?
     
 }

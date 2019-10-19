@@ -3,6 +3,7 @@
     <entity name="Plant" representedClassName="Plant" syncable="YES" codeGenerationType="class">
         <attribute name="h2oFrequency" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="nickName" optional="YES" attributeType="String"/>
         <attribute name="species" optional="YES" attributeType="String"/>
         <attribute name="userID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -14,7 +15,7 @@
         <attribute name="username" optional="YES" attributeType="String"/>
     </entity>
     <elements>
+        <element name="Plant" positionX="-9" positionY="63" width="128" height="133"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="Plant" positionX="-9" positionY="63" width="128" height="118"/>
     </elements>
 </model>
