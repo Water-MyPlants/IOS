@@ -23,6 +23,7 @@
 		4F951401235A8CD3005D251B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F951406235A8CD8005D251B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F951408235A8CD8005D251B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F95140E235BABDB005D251B /* ProjectLog.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ProjectLog.md; sourceTree = "<group>"; };
 		866B07ED235ABAC800EBD691 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +64,7 @@
 				4F951400235A8CD3005D251B /* Main.storyboard */,
 				4F951405235A8CD8005D251B /* LaunchScreen.storyboard */,
 				4F951408235A8CD8005D251B /* Info.plist */,
+				4F95140E235BABDB005D251B /* ProjectLog.md */,
 			);
 			path = "Water da Plants";
 			sourceTree = "<group>";
