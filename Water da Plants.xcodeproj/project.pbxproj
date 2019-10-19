@@ -21,6 +21,10 @@
 		9EE38994235BB185009C02B1 /* MyPlantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE38993235BB185009C02B1 /* MyPlantDetailViewController.swift */; };
 		9EE38996235BB1B5009C02B1 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE38995235BB1B5009C02B1 /* UserSettingsViewController.swift */; };
 		9EE38999235BB224009C02B1 /* PlantSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE38998235BB224009C02B1 /* PlantSearchTableViewCell.swift */; };
+		9EE3899C235BB44B009C02B1 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3899B235BB44B009C02B1 /* Login.swift */; };
+		9EE3899F235BB4FA009C02B1 /* Login.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3899D235BB4FA009C02B1 /* Login.xcdatamodeld */; };
+		9EE389A2235BB64E009C02B1 /* PlantRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE389A1235BB64E009C02B1 /* PlantRepresentation.swift */; };
+		9EE389A6235BB90B009C02B1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE389A5235BB90B009C02B1 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,10 @@
 		9EE38993235BB185009C02B1 /* MyPlantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantDetailViewController.swift; sourceTree = "<group>"; };
 		9EE38995235BB1B5009C02B1 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		9EE38998235BB224009C02B1 /* PlantSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantSearchTableViewCell.swift; sourceTree = "<group>"; };
+		9EE3899B235BB44B009C02B1 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		9EE3899E235BB4FA009C02B1 /* Login.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Login.xcdatamodel; sourceTree = "<group>"; };
+		9EE389A1235BB64E009C02B1 /* PlantRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRepresentation.swift; sourceTree = "<group>"; };
+		9EE389A5235BB90B009C02B1 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,7 @@
 		4F9513EE235A8CD3005D251B = {
 			isa = PBXGroup;
 			children = (
+				9EE3899A235BB43C009C02B1 /* Model */,
 				9EE38997235BB1F2009C02B1 /* Table View Cell */,
 				9EE38986235BAFF1009C02B1 /* View Controller */,
 				4F9513F9235A8CD3005D251B /* Water da Plants */,
@@ -107,6 +116,17 @@
 				9EE38998235BB224009C02B1 /* PlantSearchTableViewCell.swift */,
 			);
 			path = "Table View Cell";
+			sourceTree = "<group>";
+		};
+		9EE3899A235BB43C009C02B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9EE3899B235BB44B009C02B1 /* Login.swift */,
+				9EE389A5235BB90B009C02B1 /* CoreDataStack.swift */,
+				9EE389A1235BB64E009C02B1 /* PlantRepresentation.swift */,
+				9EE3899D235BB4FA009C02B1 /* Login.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,12 +203,16 @@
 				9EE38988235BB032009C02B1 /* LoginViewController.swift in Sources */,
 				4F9513FB235A8CD3005D251B /* AppDelegate.swift in Sources */,
 				9EE3898C235BB0A9009C02B1 /* HomeScreenTabBarController.swift in Sources */,
+				9EE3899C235BB44B009C02B1 /* Login.swift in Sources */,
 				9EE38992235BB159009C02B1 /* MyPlantsWaterScheduleViewController.swift in Sources */,
 				9EE38994235BB185009C02B1 /* MyPlantDetailViewController.swift in Sources */,
 				4F9513FD235A8CD3005D251B /* SceneDelegate.swift in Sources */,
+				9EE389A6235BB90B009C02B1 /* CoreDataStack.swift in Sources */,
 				9EE38996235BB1B5009C02B1 /* UserSettingsViewController.swift in Sources */,
+				9EE3899F235BB4FA009C02B1 /* Login.xcdatamodeld in Sources */,
 				9EE38999235BB224009C02B1 /* PlantSearchTableViewCell.swift in Sources */,
 				9EE38990235BB0FF009C02B1 /* MyPlantsTableViewController.swift in Sources */,
+				9EE389A2235BB64E009C02B1 /* PlantRepresentation.swift in Sources */,
 				9EE3898A235BB053009C02B1 /* RegisterViewController.swift in Sources */,
 				9EE3898E235BB0D8009C02B1 /* SearchPlantTableViewController.swift in Sources */,
 			);
@@ -388,6 +412,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9EE3899D235BB4FA009C02B1 /* Login.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9EE3899E235BB4FA009C02B1 /* Login.xcdatamodel */,
+			);
+			currentVersion = 9EE3899E235BB4FA009C02B1 /* Login.xcdatamodel */;
+			path = Login.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4F9513EF235A8CD3005D251B /* Project object */;
 }
