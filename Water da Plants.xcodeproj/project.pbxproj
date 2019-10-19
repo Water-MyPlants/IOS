@@ -11,6 +11,7 @@
 		4F9513FD235A8CD3005D251B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9513FC235A8CD3005D251B /* SceneDelegate.swift */; };
 		4F951402235A8CD3005D251B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F951400235A8CD3005D251B /* Main.storyboard */; };
 		4F951407235A8CD8005D251B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F951405235A8CD8005D251B /* LaunchScreen.storyboard */; };
+		4F951410235BBF12005D251B /* Plant+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95140F235BBF12005D251B /* Plant+Convenience.swift */; };
 		866B07EE235ABAC800EBD691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 866B07ED235ABAC800EBD691 /* Assets.xcassets */; };
 		9EE38988235BB032009C02B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE38987235BB032009C02B1 /* LoginViewController.swift */; };
 		9EE3898A235BB053009C02B1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE38989235BB053009C02B1 /* RegisterViewController.swift */; };
@@ -21,8 +22,8 @@
 		9EE38994235BB185009C02B1 /* MyPlantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE38993235BB185009C02B1 /* MyPlantDetailViewController.swift */; };
 		9EE38996235BB1B5009C02B1 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE38995235BB1B5009C02B1 /* UserSettingsViewController.swift */; };
 		9EE38999235BB224009C02B1 /* PlantSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE38998235BB224009C02B1 /* PlantSearchTableViewCell.swift */; };
-		9EE3899C235BB44B009C02B1 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3899B235BB44B009C02B1 /* Login.swift */; };
-		9EE3899F235BB4FA009C02B1 /* Login.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3899D235BB4FA009C02B1 /* Login.xcdatamodeld */; };
+		9EE3899C235BB44B009C02B1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3899B235BB44B009C02B1 /* User.swift */; };
+		9EE3899F235BB4FA009C02B1 /* WaterDaPlants.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3899D235BB4FA009C02B1 /* WaterDaPlants.xcdatamodeld */; };
 		9EE389A2235BB64E009C02B1 /* PlantRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE389A1235BB64E009C02B1 /* PlantRepresentation.swift */; };
 		9EE389A6235BB90B009C02B1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE389A5235BB90B009C02B1 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
@@ -35,6 +36,7 @@
 		4F951406235A8CD8005D251B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F951408235A8CD8005D251B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F95140E235BABDB005D251B /* ProjectLog.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ProjectLog.md; sourceTree = "<group>"; };
+		4F95140F235BBF12005D251B /* Plant+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+Convenience.swift"; sourceTree = "<group>"; };
 		866B07ED235ABAC800EBD691 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EE38987235BB032009C02B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View Controller/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 		9EE38989235BB053009C02B1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = "View Controller/RegisterViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -45,7 +47,7 @@
 		9EE38993235BB185009C02B1 /* MyPlantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantDetailViewController.swift; sourceTree = "<group>"; };
 		9EE38995235BB1B5009C02B1 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		9EE38998235BB224009C02B1 /* PlantSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantSearchTableViewCell.swift; sourceTree = "<group>"; };
-		9EE3899B235BB44B009C02B1 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		9EE3899B235BB44B009C02B1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9EE3899E235BB4FA009C02B1 /* Login.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Login.xcdatamodel; sourceTree = "<group>"; };
 		9EE389A1235BB64E009C02B1 /* PlantRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRepresentation.swift; sourceTree = "<group>"; };
 		9EE389A5235BB90B009C02B1 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -121,10 +123,11 @@
 		9EE3899A235BB43C009C02B1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9EE3899B235BB44B009C02B1 /* Login.swift */,
+				9EE3899B235BB44B009C02B1 /* User.swift */,
 				9EE389A5235BB90B009C02B1 /* CoreDataStack.swift */,
 				9EE389A1235BB64E009C02B1 /* PlantRepresentation.swift */,
-				9EE3899D235BB4FA009C02B1 /* Login.xcdatamodeld */,
+				4F95140F235BBF12005D251B /* Plant+Convenience.swift */,
+				9EE3899D235BB4FA009C02B1 /* WaterDaPlants.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,13 +206,14 @@
 				9EE38988235BB032009C02B1 /* LoginViewController.swift in Sources */,
 				4F9513FB235A8CD3005D251B /* AppDelegate.swift in Sources */,
 				9EE3898C235BB0A9009C02B1 /* HomeScreenTabBarController.swift in Sources */,
-				9EE3899C235BB44B009C02B1 /* Login.swift in Sources */,
+				9EE3899C235BB44B009C02B1 /* User.swift in Sources */,
 				9EE38992235BB159009C02B1 /* MyPlantsWaterScheduleViewController.swift in Sources */,
 				9EE38994235BB185009C02B1 /* MyPlantDetailViewController.swift in Sources */,
 				4F9513FD235A8CD3005D251B /* SceneDelegate.swift in Sources */,
 				9EE389A6235BB90B009C02B1 /* CoreDataStack.swift in Sources */,
 				9EE38996235BB1B5009C02B1 /* UserSettingsViewController.swift in Sources */,
-				9EE3899F235BB4FA009C02B1 /* Login.xcdatamodeld in Sources */,
+				4F951410235BBF12005D251B /* Plant+Convenience.swift in Sources */,
+				9EE3899F235BB4FA009C02B1 /* WaterDaPlants.xcdatamodeld in Sources */,
 				9EE38999235BB224009C02B1 /* PlantSearchTableViewCell.swift in Sources */,
 				9EE38990235BB0FF009C02B1 /* MyPlantsTableViewController.swift in Sources */,
 				9EE389A2235BB64E009C02B1 /* PlantRepresentation.swift in Sources */,
@@ -414,13 +418,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9EE3899D235BB4FA009C02B1 /* Login.xcdatamodeld */ = {
+		9EE3899D235BB4FA009C02B1 /* WaterDaPlants.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				9EE3899E235BB4FA009C02B1 /* Login.xcdatamodel */,
 			);
 			currentVersion = 9EE3899E235BB4FA009C02B1 /* Login.xcdatamodel */;
-			path = Login.xcdatamodeld;
+			path = WaterDaPlants.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
