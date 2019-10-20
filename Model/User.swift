@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UserRegisterLogin: Codable{
+struct User: Codable{
     var username: String?
     var phoneNumber: Int?
     var password: String?
