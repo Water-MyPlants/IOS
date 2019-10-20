@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 
 
+//struct Posts: Codable {
+//    var posts: [PlantRepresentation]
+//}
+
 struct PlantRepresentation: Codable {
     enum CodingKeys: String, CodingKey{
         case id

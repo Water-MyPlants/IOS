@@ -1,0 +1,26 @@
+
+{
+  "posts":
+    [{
+    "id": 1,
+    "nickname": "Leafy McLeaf Face",
+    "species": "Planty Plantalicious",
+    "h2oFrequency": "Every other day",
+    "user_id": 1,
+    "image": "https://images.unsplash.com/photo-1545147986-a9d6f2ab03b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+}, {
+    "id": 2,
+    "nickname": "Panda Face",
+    "species": "Mushroomy",
+    "h2oFrequency": "Every three years",
+    "user_id": 2,
+    "image": "https://images.unsplash.com/photo-1511635004244-63bfe11a6be8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3150&q=80"
+}],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 },
+    { "id": 2, "body": "some comment", "postId": 1 }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
