@@ -75,8 +75,6 @@ class PlantController{
    
     // MARK: updatePlants
     func updatePlants(with representations: [PlantRepresentation], context: NSManagedObjectContext) {
-       
-       
     // Which representations do we already have in Core Data?
         let identifiersToFetch = representations.map({ $0.id })
     // [UUID: EntryRepresentation]
@@ -132,7 +130,22 @@ class PlantController{
                completion(nil)
                }.resume()
        }
-  // MARK: Delete Plant
+
+    // MARK: Add Plant
+    func addPlant(plantRepresentation: PlantRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        context.performAndWait {
+            guard let plant = Plant(plantRepresentation: plantRepresentation, context: context) else { return }
+
+            do {
+                try CoreDataStack.shared.save(context: context)
+            } catch {
+                NSLog("Error when saving context when adding Plant: \(error)")
+            }
+            put(plant: plant)
+        }
+    }
+    
+// MARK: Delete Plant
     func deletePlant(plant: Plant, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
             deletePlantFromServer(plant: plant)
             context.performAndWait {
@@ -147,8 +160,8 @@ class PlantController{
             }
         }
 
-    }
-    // MARK: Fetch form API
+    
+    // MARK: Search for Plants
     func searchForPlants(with searchTerm: String, completion: @escaping (Error?) -> Void) {
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let queryParameters = ["query": searchTerm]
@@ -179,6 +192,7 @@ class PlantController{
         }.resume()
     }
     
+    // MARK: fetch image
     func fetchImage(from imageURL: String, completion: @escaping(UIImage?) -> Void) {
         guard let imageURL = URL(string: imageURL) else {
             completion(nil)
@@ -198,18 +212,6 @@ class PlantController{
             let image = UIImage(data: data)
             completion(image)
         }.resume()
-    }
-    
-    func addPlant(plantRepresentation: PlantRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-        context.performAndWait {
-            guard let plant = Plant(plantRepresentation: plantRepresentation, context: context) else { return }
-            do {
-                try CoreDataStack.shared.save(context: context)
-            } catch {
-                NSLog("Error when saving context when adding Movie: \(error)")
-            }
-            put(plant: plant)
-        }
     }
     
     // MARK: PUT func
@@ -236,6 +238,52 @@ class PlantController{
             }.resume()
     }
 
+    // MARK: Update
+    func update(plant: Plant, plantRepresentation: PlantRepresentation) {
+        plant.id = plantRepresentation.id
+    }
+    
+    // MARK: Update Persistent Store
+    func updatePersistentStore(with plantRepresentations: [PlantRepresentation], context: NSManagedObjectContext) {
+            context.performAndWait {
+                for plantRepresentation in plantRepresentations {
+                    guard let identifier = plantRepresentation.id else { continue }
+                    let plant = self.fetchingSinglePlantFromPersistentStore(id: identifier, context: context)
 
+                    if let plant = plant {
+                        if plantRepresentation != plant {
+                            self.update(plant: plant, plantRepresentation: plantRepresentation)
+                        }
+                    } else {
+                        Plant(plantRepresentation: plantRepresentation, context: context)
+                    }
+                }
+            }
+
+            do {
+                try CoreDataStack.shared.save(context: context)
+            } catch {
+                NSLog("Error saving context when updating Persistent Store: \(error)")
+                context.reset()
+            }
+        }
+
+        // MARK: Fetch from Persistent Store
+        func fetchingSinglePlantFromPersistentStore(id: String, context: NSManagedObjectContext) -> Plant? {
+            let predicate = NSPredicate(format: "identifier == %@", id as CVarArg)
+            let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
+            fetchRequest.predicate = predicate
+
+            var plant: Plant? = nil
+
+            context.performAndWait {
+                do {
+                    plant = try context.fetch(fetchRequest).first
+                } catch {
+                    NSLog("Error fetching plant")
+                }
+            }
+            return plant
+        }
 
 }
