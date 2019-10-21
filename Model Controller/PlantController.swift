@@ -295,9 +295,9 @@ class PlantController{
 
 // MARK: Signup
 extension PlantController {
-    func signUp(username: String, password: String, phoneNumber: Int, id: Int?, token: String?, completion: @escaping (NetworkError?) -> Void) {
+    func signUp(username: String, password: String, phoneNumber: Int, id: Int?, completion: @escaping (NetworkError?) -> Void) {
         
-        let newUser = User(username: username, phoneNumber: phoneNumber, password: password, id: nil, token: token)
+        let newUser = User(username: username, phoneNumber: phoneNumber, password: password, id: nil)
         let signUpURL = baseURL.appendingPathComponent("api/user/register")
         var request = URLRequest(url: signUpURL)
         request.httpMethod = HTTPMethod.post.rawValue
