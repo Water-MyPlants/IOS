@@ -38,7 +38,7 @@ class PlantController{
         fetchPlantsFromServer()
         print("We're in the init")
     }
-    
+    // MARK: Fetch Plant from Server
     func fetchPlantsFromServer(completion: @escaping () -> Void = {}) {
         let requestURL = baseURL.appendingPathComponent("api/plants/")
         var request = URLRequest(url: requestURL)
@@ -72,6 +72,8 @@ class PlantController{
     
     //holy cow this is weird
 //    $0= go through every element of the array and grab it
+   
+    // MARK: updatePlants
     func updatePlants(with representations: [PlantRepresentation], context: NSManagedObjectContext) {
        
        
@@ -112,7 +114,7 @@ class PlantController{
                 NSLog("Error fetching entries from persistent store: \(error)")
             }
         }
-    
+    // MARK: delete Plant from Server
     func deletePlantFromServer(plant: Plant?, completion: @escaping(Error?) -> Void = { _ in }) {
         guard let identifier = plant?.id else {
                completion(nil)
@@ -130,8 +132,23 @@ class PlantController{
                completion(nil)
                }.resume()
        }
-    
-    // MARK: Fetch fr
+  // MARK: Delete Plant
+    func deletePlant(plant: Plant, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+            deletePlantFromServer(plant: plant)
+            context.performAndWait {
+                let moc = CoreDataStack.shared.mainContext
+                moc.delete(plant)
+
+                do {
+                    try CoreDataStack.shared.save(context: context)
+                } catch {
+                    NSLog("Error when saving context when deleting Plant: \(error)")
+                }
+            }
+        }
+
+    }
+    // MARK: Fetch form API
     func searchForPlants(with searchTerm: String, completion: @escaping (Error?) -> Void) {
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let queryParameters = ["query": searchTerm]
