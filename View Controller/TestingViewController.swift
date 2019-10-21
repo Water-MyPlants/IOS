@@ -1,27 +1,22 @@
 //
-//  LoginViewController.swift
+//  TestingViewController.swift
 //  Water da Plants
 //
-//  Created by William Chen on 10/19/19.
+//  Created by Andrew Ruiz on 10/19/19.
 //  Copyright © 2019 Jonalynn Masters. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
-    
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    
+class TestingViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-
 
         // Do any additional setup after loading the view.
     }
     
+
     /*
     // MARK: - Navigation
 
@@ -31,7 +26,5 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func loginButtonTapped(_ sender: Any) {
-    }
-    
+
 }

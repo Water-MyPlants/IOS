@@ -9,11 +9,6 @@
 import Foundation
 import UIKit
 
-
-//struct Posts: Codable {
-//    var posts: [PlantRepresentation]
-//}
-
 struct PlantRepresentation: Codable {
     enum CodingKeys: String, CodingKey{
         case id
@@ -30,4 +25,10 @@ struct PlantRepresentation: Codable {
     let userID: Int64?
     let image: String?
     
+}
+
+struct PlantRepresentations: Codable {
+    
+    // MARK - TODO: Update when real backend comes into play
+    let posts: [PlantRepresentation]
 }
