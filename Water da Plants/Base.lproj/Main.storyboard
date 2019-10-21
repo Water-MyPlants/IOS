@@ -237,7 +237,7 @@
                             <outlet property="delegate" destination="k8W-BD-gON" id="rV1-wj-S5r"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="OG0-gm-9UR"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="OG0-gm-9UR"/>
                     <connections>
                         <outlet property="searchBar" destination="iWq-CT-WIy" id="Lzq-Rm-5st"/>
                     </connections>
@@ -293,11 +293,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HQ-aI-OUk">
+                                <rect key="frame" x="184" y="608" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Create"/>
+                                <connections>
+                                    <action selector="createButtonTapped:" destination="Hl8-z0-2la" eventType="touchUpInside" id="XzV-vW-9lc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="BU8-D9-yCn"/>
                     </view>
                     <navigationItem key="navigationItem" id="hly-G0-ATh"/>
+                    <connections>
+                        <outlet property="createButton" destination="4HQ-aI-OUk" id="bZf-8V-eJa"/>
+                        <outlet property="passwordTextField" destination="7Pi-aH-4f4" id="xe1-x1-M3D"/>
+                        <outlet property="phoneNumberTextField" destination="kXk-p6-4nG" id="DRK-N0-LGy"/>
+                        <outlet property="usernameTextField" destination="vYU-dL-ofA" id="7g6-nP-wHh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmq-9y-1hK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -325,6 +339,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
+                                    <action selector="registerButtonTapped:" destination="pSm-d9-M3k" eventType="touchUpInside" id="3T7-Qp-ZIb"/>
                                     <segue destination="Hl8-z0-2la" kind="show" id="qSN-jX-V3q"/>
                                 </connections>
                             </button>
@@ -364,11 +379,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="2ga-Bp-zt0"/>
                     <connections>
+                        <outlet property="loginButton" destination="sgK-kc-Ss1" id="Nxd-yA-eYv"/>
                         <outlet property="passwordTextField" destination="hxw-mx-VUH" id="M0x-1I-PuV"/>
                         <outlet property="usernameTextField" destination="gHt-0U-ta8" id="JmH-Bs-bLq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8S-z4-CWC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="pSm-d9-M3k" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="58" y="-378"/>
         </scene>
@@ -383,8 +400,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="u5y-gs-BSE" kind="relationship" relationship="viewControllers" id="538-qx-z4C"/>
                         <segue destination="k8W-BD-gON" kind="relationship" relationship="viewControllers" id="Onx-2F-1H7"/>
+                        <segue destination="u5y-gs-BSE" kind="relationship" relationship="viewControllers" id="538-qx-z4C"/>
                         <segue destination="ukW-W2-IXY" kind="relationship" relationship="viewControllers" id="XOC-e6-b2u"/>
                     </connections>
                 </tabBarController>
@@ -444,7 +461,7 @@
                             <outlet property="delegate" destination="ukW-W2-IXY" id="F3X-Fy-ACd"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="kTP-Cq-JJX"/>
+                    <tabBarItem key="tabBarItem" title="My Plants" image="house" catalog="system" id="kTP-Cq-JJX"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HzD-dO-JVh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -473,6 +490,8 @@
         <image name="Logo" width="1005" height="1005"/>
         <image name="evie-s-w1JE5duY62M-unsplash" width="2092" height="2801"/>
         <image name="gear" catalog="system" width="64" height="60"/>
+        <image name="house" catalog="system" width="64" height="54"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xin-O1-CqN"/>

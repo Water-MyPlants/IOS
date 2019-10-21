@@ -8,19 +8,41 @@
 
 import UIKit
 
+
 class LoginViewController: UIViewController {
     
+    let plantController = PlantController()
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+ 
+    @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-
-
-        // Do any additional setup after loading the view.
     }
+    
+    private func login() {
+        guard let username = usernameTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty else { return }
+        
+        plantController.login(username: username, password: password, completion: { (error) in
+            if let error = error {
+                          NSLog("Error login: \(error)")
+                          DispatchQueue.main.async {
+                              self.loginButton.isEnabled = true
+                          }
+                          return
+                      }
+                      DispatchQueue.main.async {
+                        if (self.plantController.currentUser != nil) {
+                            self.dismiss(animated: true, completion: nil)
+                            print("Login successful")
+                          } else {
+                              print("Can't login")
+                              self.loginButton.isEnabled = true
+                          }
+                      }
+                  })
+        }
     
     /*
     // MARK: - Navigation
@@ -32,6 +54,9 @@ class LoginViewController: UIViewController {
     }
     */
     @IBAction func loginButtonTapped(_ sender: Any) {
+        loginButton.isEnabled = false
+              login()
     }
+    
     
 }

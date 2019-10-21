@@ -32,3 +32,20 @@ struct PlantRepresentations: Codable {
     // MARK - TODO: Update when real backend comes into play
     let posts: [PlantRepresentation]
 }
+
+func ==(lhs: PlantRepresentation, rhs: Plant) -> Bool {
+    return lhs.nickName == rhs.nickName &&
+    lhs.species == rhs.species &&
+        lhs.h2oFrequency == rhs.h2oFrequency &&
+        lhs.image == rhs.image &&
+        lhs.id == rhs.id
+}
+func ==(lhs: Plant, rhs: PlantRepresentation) -> Bool {
+   return rhs == lhs
+}
+func !=(lhs: PlantRepresentation, rhs: Plant) -> Bool {
+   return !(lhs == rhs)
+}
+func !=(lhs: Plant, rhs: PlantRepresentation) -> Bool {
+   return rhs != lhs
+}

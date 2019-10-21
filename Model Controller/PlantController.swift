@@ -24,10 +24,15 @@ enum NetworkError: Error {
     case noDecode
     case noEncode
     case failure
+    case noUser
+    case noLogin
     case otherError(Error)
 }
 
 class PlantController{
+    
+    var currentUser : User?
+
     
 //    let baseURL = URL(string: "https://my-json-server.typicode.com/")!
     let baseURL = URL(string: "https://build-week-4.herokuapp.com/")!
@@ -240,7 +245,8 @@ class PlantController{
 
     // MARK: Update
     func update(plant: Plant, plantRepresentation: PlantRepresentation) {
-        plant.id = plantRepresentation.id
+        guard let id = plantRepresentation.id else { return }
+        plant.id = id
     }
     
     // MARK: Update Persistent Store
@@ -248,7 +254,7 @@ class PlantController{
             context.performAndWait {
                 for plantRepresentation in plantRepresentations {
                     guard let identifier = plantRepresentation.id else { continue }
-                    let plant = self.fetchingSinglePlantFromPersistentStore(id: identifier, context: context)
+                    let plant = self.fetchingSinglePlantFromPersistentStore(id: "\(identifier)", context: context)
 
                     if let plant = plant {
                         if plantRepresentation != plant {
@@ -285,5 +291,129 @@ class PlantController{
             }
             return plant
         }
-
 }
+
+// MARK: Signup
+extension PlantController {
+    func signUp(username: String, password: String, phoneNumber: Int, id: Int?, token: String?, completion: @escaping (NetworkError?) -> Void) {
+        
+        let newUser = User(username: username, phoneNumber: phoneNumber, password: password, id: nil, token: token)
+        let signUpURL = baseURL.appendingPathComponent("api/user/register")
+        var request = URLRequest(url: signUpURL)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        do {
+            print(newUser)
+            let userData = try JSONEncoder().encode(newUser)
+            request.httpBody = userData
+        } catch {
+            NSLog("Error encoding user when registering: \(error)")
+            completion(.noEncode)
+            return
+        }
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                NSLog("Error posting url request when register: \(error)")
+                completion(.badRequest)
+                return
+            }
+            if let response = response as? HTTPURLResponse,
+            response.statusCode != 201 {
+                NSLog("User wasn't completed: \(response.statusCode)")
+                completion(.noUser)
+            }
+            completion(nil)
+            }.resume()
+    }
+    
+    func login (username: String, password: String, completion: @escaping (NetworkError?)-> Void) {
+           //let loginInfo = ["username": username, "password": password]
+           let loginInfo = UserLogin(username: username, password: password)
+           let loginURL = baseURL.appendingPathComponent("api/login")
+           var request = URLRequest(url: loginURL)
+           request.httpMethod = HTTPMethod.post.rawValue
+           request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+           do {
+               let loginData = try JSONEncoder().encode(loginInfo)
+               request.httpBody = loginData
+           } catch {
+               NSLog("Error encoding user when login: \(error)")
+               completion(.noEncode)
+               return
+           }
+           URLSession.shared.dataTask(with: request) { (data, response, error) in
+               if let error = error {
+                   NSLog("Error posting url request when login: \(error)")
+                   completion(.badRequest)
+                   return
+               }
+//               guard let data = data else {
+//                   NSLog("no data return on login")
+//                   completion(.noData)
+//                   return
+//               }
+//               do {
+//                   let user = try JSONDecoder().decode(User.self, from: data)
+//                   print(user)
+//                   self.currentUser = user
+//                   //self.saveLocalUser()
+//                   completion(nil)
+//               } catch {
+//                   NSLog("Error decoding when login: \(error)")
+//                   completion(.noDecode)
+//                   return
+//               }
+//           }.resume()
+            
+            if let response = response as? HTTPURLResponse,
+             response.statusCode != 201 {
+                 NSLog("User wasn't completed: \(response.statusCode)")
+                completion(.noLogin)
+             }
+             completion(nil)
+             }.resume()
+       }
+//       private func saveLocalUser() {
+//           guard let url = self.userLocalURL else{ return }
+//           do{
+//               let data = try PropertyListEncoder().encode(currentUser)
+//               try data.write(to: url)
+//           }catch{
+//               print("Error saving data: \(error)")
+//           }
+//       }
+//       func updateUser(firstName: String, lastName: String, password: String, completion: @escaping (NetworkError?) -> Void) {
+//           guard currentUser != nil, let userId = currentUser?.id else { return }
+//           guard let token = currentUser?.token else {
+//               completion(.noToken)
+//               return
+//           }
+//           print(token)
+//           // local update
+//           currentUser?.firstName = firstName
+//           currentUser?.lastName = lastName
+//           currentUser?.password = password
+//           let updateJson = ["firstName": firstName, "lastName": lastName, "password": password]
+//           let updateURL = baseURL.appendingPathComponent("api/users/\(userId)")
+//           var request = URLRequest(url: updateURL)
+//           request.httpMethod = HTTPMethod.put.rawValue
+//           request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//           request.addValue(token, forHTTPHeaderField: "Authorization")
+//           do {
+//               let userData = try JSONEncoder().encode(updateJson)
+//               request.httpBody = userData
+//           } catch {
+//               NSLog("Error encoding user when updating: \(error)")
+//               completion(.noEncode)
+//               return
+//           }
+//           URLSession.shared.dataTask(with: request) { (data, response, error) in
+//               if let error = error {
+//                   NSLog("Error posting url request when update: \(error)")
+//                   completion(.badRequest)
+//                   return
+//               }
+//               completion(nil)
+//           }.resume()
+//       }
+    }
