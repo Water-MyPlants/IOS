@@ -33,8 +33,8 @@ class MyPlantTableViewCell: UITableViewCell {
     
     func updateViews() {
         guard let plant = plant else { return }
-        guard let nickname = plant.nickname else { return }
-        nickNameLabel.text = plant.nickname 
+        nickNameLabel.text = plant.nickName
+        speciesLabel.text = plant.species
     }
 
 }
