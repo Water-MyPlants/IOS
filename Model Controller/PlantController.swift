@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 enum HTTPMethod: String{
     case get = "GET"
@@ -28,10 +29,13 @@ enum NetworkError: Error {
 
 class PlantController{
     
-    
     let baseURL = URL(string: "https://my-json-server.typicode.com/")!
+    var searchedPlants: [PlantRepresentation] = []
 
-    
+    init() {
+        fetchPlantsFromServer()
+        print("We're in the init")
+    }
     func fetchPlantsFromServer(completion: @escaping () -> Void = {}) {
         let requestURL = baseURL.appendingPathComponent("lightdarkphoton/demo/db")
         var request = URLRequest(url: requestURL)
@@ -60,9 +64,10 @@ class PlantController{
                 completion()
             }.resume()
         }
+    
     //holy cow this is weird
 //    $0= go through every element of the array and grab it
-    func updateEntries(with representations: [PlantRepresentation]) {
+    func updatePlants(with representations: [PlantRepresentation], context: NSManagedObjectContext) {
        
        
     // Which representations do we already have in Core Data?
@@ -80,42 +85,117 @@ class PlantController{
         // Update the ones we do have
         for plant in existingPlants {
             // Grab the EntryRepresentation that corresponds to this Entry
-                let identifier = plant.id,
-                let representation = representationsByID[identifier] else { continue }
-            plant.id = represention.id
-            plant.bodyText = representation.bodyText
-            plant.timestamp = representation.timestamp
-            plant.mood = representation.mood
-            // We just updated an entry, we don't need to create a new Entry for this identifier
-            entriesToCreate.removeValue(forKey: identifier)
-        }
+                let identifier = plant.id
+            guard let representation = representationsByID[identifier],
+                let ID = representation.id else { continue }
+            plant.id = ID
+            plant.nickName = representation.nickName
+            plant.image = representation.image
+            plant.species = representation.species
+            plant.h2oFrequency = representation.h2oFrequency
 
+            // We just updated an entry, we don't need to create a new Entry for this identifier
+            plantsToCreate.removeValue(forKey: identifier)
+        }
+                // Figure out which ones we don't have
+                for representation in plantsToCreate.values {
+                    Plant(plantRepresentation: representation, context: context)
+                }
+                // Persist all the changes (updating and creating of entries) to Core Data
+                CoreDataStack.shared.saveToPersistentStore()
+            } catch {
+                NSLog("Error fetching entries from persistent store: \(error)")
+            }
+        }
     
-//    private func updatePlants(with plantsRepresentations: [PlantRepresentation] , context: NSManagedObjectContext) {
-//        context.performAndWait {
-//            for plantRepresentation in plantsRepresentations {
-//                //see if a task with the same identifier exist in core data
-//                guard let id = plantRepresentation.id else { continue }
-//                // update it if one does exist, or create a Task if it doesn't
-//                if let plant = Plant {
-//                    //task exist in core data, update it
-//                    course.name = plantRepresentation.name
-//                    course.location = courseRepresentation.location
-//                    course.type = courseRepresentation.type
-//                } else {
-//                    //task not exist, make new one
-//                    Course(courseRepresentation: courseRepresentation, context: context)
-//                }
-//            }
-//            do {
-//                try CoreDataStack.shared.save(context: context)
-//            } catch {
-//                NSLog("Error saving \(error)")
-//                context.reset()
-//            }
+    
+    func searchForPlants(with searchTerm: String, completion: @escaping (Error?) -> Void) {
+        var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        let queryParameters = ["query": searchTerm]
+        components?.queryItems = queryParameters.map({URLQueryItem(name: $0.key, value: $0.value)})
+        guard let requestURL = components?.url else {
+            completion(NSError())
+            return
+        }
+        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
+            if let error = error {
+                NSLog("Error searching for movie with search term \(searchTerm): \(error)")
+                completion(error)
+                return
+            }
+            guard let data = data else {
+                NSLog("No data returned from data task")
+                completion(NSError())
+                return
+            }
+            do {
+                let plantRepresentations = try JSONDecoder().decode(PlantRepresentations.self, from: data).posts
+                self.searchedPlants = plantRepresentations
+                completion(nil)
+            } catch {
+                NSLog("Error decoding JSON data: \(error)")
+                completion(error)
+            }
+        }.resume()
+    }
+    
+    func fetchImage(from imageURL: String, completion: @escaping(UIImage?) -> Void) {
+        guard let imageURL = URL(string: imageURL) else {
+            completion(nil)
+            return }
+        var request = URLRequest(url: imageURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        URLSession.shared.dataTask(with: request) { (imageData, _, error) in
+            if let error = error {
+                NSLog("Error fetching image: \(error)")
+                return
+            }
+            guard let data = imageData else {
+                NSLog("No data provided for image: \(imageURL)")
+                completion(nil)
+                return
+            }
+            let image = UIImage(data: data)
+            completion(image)
+        }.resume()
+    }
+    
+    func addPlant(plantRepresentation: PlantRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        context.performAndWait {
+            guard let plant = Plant(plantRepresentation: plantRepresentation, context: context) else { return }
+            do {
+                try CoreDataStack.shared.save(context: context)
+            } catch {
+                NSLog("Error when saving context when adding Movie: \(error)")
+            }
+            //put(plant: plant)
+        }
+    }
+    
+//    // MARK: PUT func
+//    func put(plant: Plant, completion: @escaping(Error?) -> Void = { _ in }) {
+//        let identifier = plant.id
+//        let requestURL = firebaseBaseURL
+//            .appendingPathComponent(identifier.uuidString)
+//            .appendingPathExtension("json")
+//        var request = URLRequest(url: requestURL)
+//        request.httpMethod = HTTPMethod.put.rawValue
+//        do {
+//            let plantData = try JSONEncoder().encode(plant.plantRepresentation)
+//            request.httpBody = plantData
+//        } catch {
+//            NSLog("Error encoding plant representation: \(error)")
+//            completion(error)
+//            return
 //        }
+//        URLSession.shared.dataTask(with: request) { (, , error) in
+//            if let error = error {
+//                NSLog("Error PUTing plant representation to server: \(error)")
+//            }
+//            completion(nil)
+//            }.resume()
 //    }
-    
-}
-}
+
+
+
 }

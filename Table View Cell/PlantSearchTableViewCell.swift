@@ -9,7 +9,10 @@
 import UIKit
 
 class PlantSearchTableViewCell: UITableViewCell {
-
+    
+    var plantController : PlantController?
+    var plantRepresentation: PlantRepresentation?
+    @IBOutlet weak var plantName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +23,13 @@ class PlantSearchTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    @IBAction func addPlantTapped(_ sender: UIButton) {
+        
+        guard let plantController = plantController,
+            let plantRep = plantRepresentation else { return }
+        plantController.addPlant(plantRepresentation: plantRep)
+    }
+    
+    
+    
 }
