@@ -39,6 +39,7 @@ class MyPlantsTableViewController: UITableViewController {
     }
      override func viewDidLoad() {
            super.viewDidLoad()
+        
            tableView.tableFooterView = UIView()
            tableView.refreshControl = UIRefreshControl()
            tableView.refreshControl?.addTarget(self, action: #selector(beginRefresh), for: .valueChanged)
@@ -64,21 +65,8 @@ class MyPlantsTableViewController: UITableViewController {
 //
 //            return cell
             let onePlant = fetchedResultsController.object(at: indexPath)
-//            
-            let request: NSFetchRequest<Plant> = Plant.fetchRequest()
-            request.predicate = NSPredicate(format: "%@", onePlant.id ?? "" )
-//
-            var plant: Plant?
-//
-            CoreDataStack.shared.mainContext.performAndWait {
-                do {
-                    plant = try CoreDataStack.shared.mainContext.fetch(request).first
-                } catch {
-                    NSLog("Error fetching Course: \(error)")
-                }
-            }
-//
-            cell.textLabel?.text = plant?.nickName
+
+            cell.textLabel?.text = onePlant.nickName
         
             
             return cell
@@ -137,5 +125,16 @@ class MyPlantsTableViewController: UITableViewController {
                 fatalError()
             }
         }
+        
+        // MARK: - Navigation
+
+        // In a storyboard-based application, you will often want to do a little preparation before navigation
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "CreatePlantSegue" {
+                guard let createTVC = segue.destination as? CreatePlantViewController else { return }
+                createTVC.plantController = plantController
+            }
+        }
+        
     }
 

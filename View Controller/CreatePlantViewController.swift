@@ -11,7 +11,7 @@ import UIKit
 class CreatePlantViewController: UIViewController {
     
     var plantController: PlantController?
-
+    var plants: [PlantRepresentation] = []
     var plant : Plant? {
         didSet {
             // updateViews()
@@ -40,12 +40,14 @@ class CreatePlantViewController: UIViewController {
         {
             
             if let plant = plant {
-                plantController?.createPlant(with: nil, species: plantSpecies, nickName: plantNickname, h2oFrequency: h2oFrequency, image: nil, userID: nil)
+                // update plant here
+            
             } else {
                 plantController?.createPlant(with: nil, species: plantSpecies, nickName: plantNickname, h2oFrequency: h2oFrequency, image: nil, userID: nil, context: CoreDataStack.shared.mainContext)
-                
             }
+            
         }
+        
         //navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
         print("Hey we're in here")
