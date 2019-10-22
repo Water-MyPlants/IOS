@@ -65,8 +65,9 @@ class MyPlantsTableViewController: UITableViewController {
 //
 //            return cell
             let onePlant = fetchedResultsController.object(at: indexPath)
-
-            cell.textLabel?.text = onePlant.nickName
+            
+            cell.nickNameLabel.text = onePlant.nickName
+            cell.speciesLabel.text = onePlant.species
         
             
             return cell

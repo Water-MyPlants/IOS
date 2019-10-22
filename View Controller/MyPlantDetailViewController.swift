@@ -10,6 +10,10 @@ import UIKit
 
 class MyPlantDetailViewController: UIViewController {
 
+    @IBOutlet weak var nickNameLabel: UINavigationItem!
+    
+    @IBOutlet weak var plantSpeciesLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

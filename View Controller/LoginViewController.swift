@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.textField.delegate = self
     }
     
     private func login() {
@@ -62,6 +63,21 @@ class LoginViewController: UIViewController {
         loginButton.isEnabled = false
         login()
     }
+}
+
+
+extension LoginViewController: UITextFieldDelegate {
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let text = textField.text,
+            !text.isEmpty {
+            switch textField {
+            case usernameTextField:
+                passwordTextField.becomeFirstResponder()
+            default:
+                textField.resignFirstResponder()
+            }
+        }
+        return false
+    }
 }

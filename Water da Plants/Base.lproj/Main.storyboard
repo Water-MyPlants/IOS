@@ -124,7 +124,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Common Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIJ-su-alI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Species Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIJ-su-alI">
                                 <rect key="frame" x="0.0" y="227" width="414" height="55"/>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="35"/>
                                 <nil key="textColor"/>
@@ -155,10 +155,14 @@
                         <viewLayoutGuide key="safeArea" id="pQc-qH-d4J"/>
                     </view>
                     <navigationItem key="navigationItem" id="Mxt-Cr-JFh"/>
+                    <connections>
+                        <outlet property="nickNameLabel" destination="jak-r2-Yrh" id="GHP-9j-9UN"/>
+                        <outlet property="plantSpeciesLabel" destination="hIJ-su-alI" id="Iyd-Eo-HAK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ltu-5l-15f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4608.695652173913" y="-159.375"/>
+            <point key="canvasLocation" x="4606" y="-142"/>
         </scene>
         <!--Settings-->
         <scene sceneID="sG9-Ml-MRE">
@@ -316,7 +320,7 @@
                                 <rect key="frame" x="20" y="389" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vg-Vj-IVI">
                                 <rect key="frame" x="20" y="267" width="79" height="21"/>

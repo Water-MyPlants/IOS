@@ -242,7 +242,8 @@ class PlantController{
     
     // MARK: PUT func
     func put(plant: Plant, completion: @escaping(Error?) -> Void = { _ in }) {
-        let identifier = plant.id ?? "-1"
+        let number = Int.random(in: 0...1_000_000)
+        let identifier = plant.id ?? "\(number)"
         let requestURL = firebaseURL
         .appendingPathComponent(identifier)
         .appendingPathExtension("json")
