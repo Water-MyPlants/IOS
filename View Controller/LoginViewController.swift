@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     let plantController = PlantController()
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
- 
+    
     @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
@@ -26,36 +26,41 @@ class LoginViewController: UIViewController {
         
         plantController.login(username: username, password: password, completion: { (error) in
             if let error = error {
-                          NSLog("Error login: \(error)")
-                          DispatchQueue.main.async {
-                              self.loginButton.isEnabled = true
-                          }
-                          return
-                      }
-                      DispatchQueue.main.async {
-                        if (self.plantController.currentUser != nil) {
-                            self.dismiss(animated: true, completion: nil)
-                            print("Login successful")
-                          } else {
-                              print("Can't login")
-                              self.loginButton.isEnabled = true
-                          }
-                      }
-                  })
-        }
+                NSLog("Error login: \(error)")
+                DispatchQueue.main.async {
+                    self.loginButton.isEnabled = true
+                }
+                return
+            }
+            
+            self.plantController.fetchPlantsFromServer {
+                print("Plants fetched")
+            }
+            
+            DispatchQueue.main.async {
+                if (self.plantController.bearer != nil) {
+                    self.dismiss(animated: true, completion: nil)
+                    print("Login successful")
+                } else {
+                    print("Can't login")
+                    self.loginButton.isEnabled = true
+                }
+            }
+        })
+    }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     @IBAction func loginButtonTapped(_ sender: Any) {
         loginButton.isEnabled = false
-              login()
+        login()
     }
     
     

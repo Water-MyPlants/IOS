@@ -13,5 +13,4 @@ struct User: Codable{
     var phoneNumber: Int?
     var password: String?
     var id: Int?
-    var token: String?
 }

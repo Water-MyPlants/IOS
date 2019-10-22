@@ -32,6 +32,7 @@ enum NetworkError: Error {
 class PlantController{
     
     var currentUser : User?
+    var bearer: Bearer?
 
     
 //    let baseURL = URL(string: "https://my-json-server.typicode.com/")!
@@ -40,15 +41,22 @@ class PlantController{
     var searchedPlants: [PlantRepresentation] = []
 
     init() {
-        fetchPlantsFromServer()
         print("We're in the init")
     }
     // MARK: Fetch Plant from Server
     func fetchPlantsFromServer(completion: @escaping () -> Void = {}) {
+        
+        guard let bearer = bearer else {
+            completion()
+            return
+        }
         let requestURL = baseURL.appendingPathComponent("api/plants/")
         var request = URLRequest(url: requestURL)
             request.httpMethod = HTTPMethod.get.rawValue
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue(bearer.token, forHTTPHeaderField: "Authorization")
+            
+        
           
         URLSession.shared.dataTask(with: request) { (data, _, error) in
                 if let error = error {
@@ -56,9 +64,11 @@ class PlantController{
                     return
                 }
                 guard let data = data else {
+                    
                     NSLog("No data returned from data task")
                     return
                 }
+            print(String(data: data, encoding: .utf8))
                 do {
                     let decoder = JSONDecoder()
 //                    let plantsRepresentations = Array(try decoder.decode([String: PlantRepresentation].self, from: data).values)
@@ -326,14 +336,17 @@ extension PlantController {
             }.resume()
     }
     
-    func login (username: String, password: String, completion: @escaping (NetworkError?)-> Void) {
+    func login(username: String, password: String, completion: @escaping (NetworkError?)-> Void) {
            //let loginInfo = ["username": username, "password": password]
            let loginInfo = UserLogin(username: username, password: password)
-           let loginURL = baseURL.appendingPathComponent("api/login")
+           let loginURL = baseURL.appendingPathComponent("api/user/login")
            var request = URLRequest(url: loginURL)
+        
            request.httpMethod = HTTPMethod.post.rawValue
            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+           
            do {
+
                let loginData = try JSONEncoder().encode(loginInfo)
                request.httpBody = loginData
            } catch {
@@ -347,23 +360,22 @@ extension PlantController {
                    completion(.badRequest)
                    return
                }
-//               guard let data = data else {
-//                   NSLog("no data return on login")
-//                   completion(.noData)
-//                   return
-//               }
-//               do {
-//                   let user = try JSONDecoder().decode(User.self, from: data)
-//                   print(user)
-//                   self.currentUser = user
-//                   //self.saveLocalUser()
-//                   completion(nil)
-//               } catch {
-//                   NSLog("Error decoding when login: \(error)")
-//                   completion(.noDecode)
-//                   return
-//               }
-//           }.resume()
+               guard let data = data else {
+                   NSLog("no data return on login")
+                   completion(.noData)
+                   return
+               }
+               do {
+                   let bearer = try JSONDecoder().decode(Bearer.self, from: data)
+                   print(bearer)
+                   self.bearer = bearer
+                   //self.saveLocalUser()
+                   completion(nil)
+               } catch {
+                   NSLog("Error decoding when login: \(error)")
+                   completion(.noDecode)
+                   return
+               }
             
             if let response = response as? HTTPURLResponse,
              response.statusCode != 201 {
@@ -371,6 +383,7 @@ extension PlantController {
                 completion(.noLogin)
              }
              completion(nil)
+            print("Login successful")
              }.resume()
        }
 //       private func saveLocalUser() {
