@@ -38,7 +38,7 @@ class PlantController{
 //    let baseURL = URL(string: "https://my-json-server.typicode.com/")!
     let baseURL = URL(string: "https://build-week-4.herokuapp.com/")!
     let firebaseURL = URL(string: "https://planttest-aca2a.firebaseio.com/")!
-    var searchedPlants: [PlantRepresentation] = []
+    var plants: [PlantRepresentation] = []
 
     init() {
         print("We're in the init")
@@ -156,6 +156,8 @@ class PlantController{
            context.performAndWait {
            
             let plant = Plant(id: id, nickName: nickName, species: species, image: nil, h2oFrequency: h2oFrequency, userID: nil)
+            let onePlant = PlantRepresentation(id: id, nickName: nickName, species: species, h2oFrequency: h2oFrequency, userID: nil, image: nil)
+            plants.append(onePlant)
                print(print)
                
                do {
@@ -207,7 +209,7 @@ class PlantController{
             }
             do {
                 let plantRepresentations = try JSONDecoder().decode(PlantRepresentations.self, from: data).posts
-                self.searchedPlants = plantRepresentations
+                self.plants = plantRepresentations
                 completion(nil)
             } catch {
                 NSLog("Error decoding JSON data: \(error)")

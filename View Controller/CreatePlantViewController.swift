@@ -69,9 +69,9 @@ class CreatePlantViewController: UIViewController {
         return
     }
 
-        
         plantController?.createPlant(with: nil, species: species, nickName: nickName, h2oFrequency: h2oFrequency, image: nil, userID: nil)
-}        
+    }
+
     /*
     // MARK: - Navigation
 

@@ -14,7 +14,6 @@
 		4F951410235BBF12005D251B /* Plant+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95140F235BBF12005D251B /* Plant+Convenience.swift */; };
 		4F951415235E2C86005D251B /* MyPlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F951414235E2C86005D251B /* MyPlantTableViewCell.swift */; };
 		866B07EE235ABAC800EBD691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 866B07ED235ABAC800EBD691 /* Assets.xcassets */; };
-		86AA8A19235C17AF00EC5AA7 /* SearchPlantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AA8A18235C17AF00EC5AA7 /* SearchPlantsTableViewController.swift */; };
 		86BB1858235F7F0600C5B2BC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB1857235F7F0600C5B2BC /* CoreDataStack.swift */; };
 		86C30536235BCD5A00FF902B /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C30535235BCD5A00FF902B /* UserLogin.swift */; };
 		86C30538235BCE3D00FF902B /* PlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C30537235BCE3D00FF902B /* PlantController.swift */; };
@@ -44,7 +43,6 @@
 		4F95140F235BBF12005D251B /* Plant+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+Convenience.swift"; sourceTree = "<group>"; };
 		4F951414235E2C86005D251B /* MyPlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantTableViewCell.swift; sourceTree = "<group>"; };
 		866B07ED235ABAC800EBD691 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		86AA8A18235C17AF00EC5AA7 /* SearchPlantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlantsTableViewController.swift; sourceTree = "<group>"; };
 		86BB1856235F7DEB00C5B2BC /* Plant 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Plant 2.xcdatamodel"; sourceTree = "<group>"; };
 		86BB1857235F7F0600C5B2BC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		86C30535235BCD5A00FF902B /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 				9EE3898B235BB0A9009C02B1 /* HomeScreenTabBarController.swift */,
 				9EE3898F235BB0FF009C02B1 /* MyPlantsTableViewController.swift */,
 				9EE38991235BB159009C02B1 /* CreatePlantViewController.swift */,
-				86AA8A18235C17AF00EC5AA7 /* SearchPlantsTableViewController.swift */,
 				9EE38993235BB185009C02B1 /* MyPlantDetailViewController.swift */,
 			);
 			path = "View Controller";
@@ -237,7 +234,6 @@
 				9EE38992235BB159009C02B1 /* CreatePlantViewController.swift in Sources */,
 				9EE38994235BB185009C02B1 /* MyPlantDetailViewController.swift in Sources */,
 				4F9513FD235A8CD3005D251B /* SceneDelegate.swift in Sources */,
-				86AA8A19235C17AF00EC5AA7 /* SearchPlantsTableViewController.swift in Sources */,
 				4F951415235E2C86005D251B /* MyPlantTableViewCell.swift in Sources */,
 				9EE38996235BB1B5009C02B1 /* UserSettingsViewController.swift in Sources */,
 				4F951410235BBF12005D251B /* Plant+Convenience.swift in Sources */,

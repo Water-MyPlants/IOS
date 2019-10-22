@@ -57,11 +57,30 @@ class MyPlantsTableViewController: UITableViewController {
 
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyPlantCell", for: indexPath) as? MyPlantTableViewCell else { return UITableViewCell() }
-
-            let plant = fetchedResultsController.object(at: indexPath)
-            cell.plant = plant
-            cell.plantController = plantController
-
+//
+//            let plant = fetchedResultsController.object(at: indexPath)
+//            cell.plant = plant
+//            cell.plantController = plantController
+//
+//            return cell
+            let onePlant = fetchedResultsController.object(at: indexPath)
+//            
+            let request: NSFetchRequest<Plant> = Plant.fetchRequest()
+            request.predicate = NSPredicate(format: "%@", onePlant.id ?? "" )
+//
+            var plant: Plant?
+//
+            CoreDataStack.shared.mainContext.performAndWait {
+                do {
+                    plant = try CoreDataStack.shared.mainContext.fetch(request).first
+                } catch {
+                    NSLog("Error fetching Course: \(error)")
+                }
+            }
+//
+            cell.textLabel?.text = plant?.nickName
+        
+            
             return cell
         }
 
