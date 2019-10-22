@@ -107,12 +107,13 @@ class PlantController{
             // Grab the EntryRepresentation that corresponds to this Entry
                 let identifier = plant.id
             guard let representation = representationsByID[identifier],
-                let ID = representation.id else { continue }
+                let ID = representation.id,
+            let h2oFrequency = representation.h2oFrequency else { continue }
             plant.id = ID
             plant.nickName = representation.nickName
             plant.image = representation.image
             plant.species = representation.species
-            guard let plant.h2oFrequency = representation.h2oFrequency else { return }
+            plant.h2oFrequency = h2oFrequency
 
             // We just updated an entry, we don't need to create a new Entry for this identifier
             plantsToCreate.removeValue(forKey: identifier)
@@ -147,15 +148,14 @@ class PlantController{
        }
 
     // MARK: Create Plant
-    func createPlant(with id: Int64?, species: String?, nickName: String?, h2oFrequency: Double?, image: String?, userID: Int64?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-        guard let id = id,
-        let species = species,
+    func createPlant(with id: String?, species: String?, nickName: String?, h2oFrequency: Double?, image: String?, userID: String?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        guard let species = species,
         let nickName = nickName,
-        let h2oFrequency = h2oFrequency,
-        let image = image,
-        let userID = userID else { return }
+        let h2oFrequency = h2oFrequency
+            else { return }
            context.performAndWait {
-            let plant = Plant(id: id, nickName: nickName, species: species, h2oFrequency: h2oFrequency, image: image, userID: userID)
+           
+            let plant = Plant(id: id, nickName: nickName, species: species, image: nil, h2oFrequency: h2oFrequency, userID: nil)
                print(print)
                
                do {

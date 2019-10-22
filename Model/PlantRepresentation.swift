@@ -18,11 +18,11 @@ struct PlantRepresentation: Codable {
         case userID = "user_id"
         case image
     }
-    let id: Int64?
+    let id: String?
     let nickName: String?
     let species: String?
     let h2oFrequency: Double?
-    let userID: Int64?
+    let userID: String?
     let image: String?
     
 }

@@ -10,12 +10,13 @@ import Foundation
 import CoreData
 
 extension Plant {
-    @discardableResult convenience init(id: Int64, nickName: String, species: String, h2oFrequency: Double, userID: Int64, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    @discardableResult convenience init(id: String?, nickName: String, species: String, image: String? = nil, h2oFrequency: Double, userID: String?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
         self.init(context: context)
         self.id = id
         self.nickName = nickName
         self.species = species
+        self.image = image
         self.h2oFrequency = h2oFrequency
         self.userID = userID
     }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pSD-h7-VrA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pSD-h7-VrA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,16 +24,16 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your watering interval" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJ3-43-yN5">
-                                <rect key="frame" x="0.0" y="345" width="414" height="46.5"/>
+                                <rect key="frame" x="0.0" y="394" width="414" height="46.5"/>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39Y-k9-QM0">
-                                <rect key="frame" x="20" y="415" width="374" height="216"/>
+                                <rect key="frame" x="20" y="464" width="374" height="216"/>
                             </datePicker>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rS1-Cv-wWM">
-                                <rect key="frame" x="20" y="203" width="374" height="134"/>
+                                <rect key="frame" x="20" y="203" width="374" height="183"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Plant Species" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZPx-Dx-nHY">
                                 <rect key="frame" x="0.0" y="54" width="414" height="55"/>
@@ -44,21 +44,19 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j60-Gr-ljA">
-                                <rect key="frame" x="2" y="652" width="410" height="39"/>
+                                <rect key="frame" x="2" y="701" width="410" height="39"/>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="17"/>
                                 <state key="normal" title="Save Plant"/>
                                 <connections>
                                     <action selector="saveButtonTapped:" destination="zlg-as-rWK" eventType="touchUpInside" id="wy6-8Y-vsG"/>
-                                    <segue destination="9Gk-VY-ItH" kind="show" id="XoU-c4-oWL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9Y-da-7wJ">
-                                <rect key="frame" x="2" y="688" width="410" height="39"/>
+                                <rect key="frame" x="2" y="737" width="410" height="39"/>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="17"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="cancelButtonTapped:" destination="zlg-as-rWK" eventType="touchUpInside" id="LEE-8W-0ot"/>
-                                    <segue destination="9Gk-VY-ItH" kind="show" id="U9B-19-ad4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -104,36 +102,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m3s-7o-Wyl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2690" y="-978"/>
+            <point key="canvasLocation" x="4607" y="-815"/>
         </scene>
         <!--My Plant Detail View Controller-->
         <scene sceneID="klo-aa-RMu">
             <objects>
                 <viewController id="PNf-Z3-I9t" customClass="MyPlantDetailViewController" customModule="Water_da_Plants" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KCB-tM-auB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UWQ-e5-QZf">
-                                <rect key="frame" x="0.0" y="22" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="110" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Plant Nickname" id="jak-r2-Yrh"/>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Until Next Watering" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jg-mi-Rdw">
-                                <rect key="frame" x="0.0" y="285" width="414" height="39"/>
+                                <rect key="frame" x="0.0" y="290" width="414" height="39"/>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Common Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIJ-su-alI">
-                                <rect key="frame" x="0.0" y="222" width="414" height="55"/>
+                                <rect key="frame" x="0.0" y="227" width="414" height="55"/>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evie-s-w1JE5duY62M-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="Dn6-uk-zI7">
-                                <rect key="frame" x="15" y="415" width="384" height="353"/>
+                                <rect key="frame" x="15" y="420" width="384" height="353"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="353" id="f4B-DI-UG0"/>
                                 </constraints>
@@ -160,14 +158,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ltu-5l-15f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3699" y="-159"/>
+            <point key="canvasLocation" x="4608.695652173913" y="-159.375"/>
         </scene>
         <!--Settings-->
         <scene sceneID="sG9-Ml-MRE">
             <objects>
                 <viewController id="u5y-gs-BSE" customClass="UserSettingsViewController" customModule="Water_da_Plants" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TE5-kB-vNg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mWv-5m-uWr">
@@ -366,8 +364,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="u5y-gs-BSE" kind="relationship" relationship="viewControllers" id="f2r-ye-e6m"/>
-                        <segue destination="ukW-W2-IXY" kind="relationship" relationship="viewControllers" id="XOC-e6-b2u"/>
-                        <segue destination="zlg-as-rWK" kind="relationship" relationship="viewControllers" id="tRn-tP-npm"/>
+                        <segue destination="2nA-o0-EOi" kind="relationship" relationship="viewControllers" id="XOC-e6-b2u"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2L9-9J-MON" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -379,7 +376,7 @@
             <objects>
                 <tableViewController id="ukW-W2-IXY" userLabel="My Plants Table View Controller" customClass="MyPlantsTableViewController" customModule="Water_da_Plants" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QTz-Ht-BPZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <button key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Dax-XN-S4p">
@@ -395,7 +392,7 @@
                                 <rect key="frame" x="0.0" y="72" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FAh-yl-RZv" id="7EW-VO-GjO" customClass="MyPlantTableViewCell" customModule="Water_da_Plants" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="382.5" height="55.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cfD-pl-Np0" userLabel="Nickname">
@@ -426,12 +423,17 @@
                             <outlet property="delegate" destination="ukW-W2-IXY" id="F3X-Fy-ACd"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="My Plants" image="house" catalog="system" id="kTP-Cq-JJX"/>
-                    <navigationItem key="navigationItem" title="Title" id="xl6-ws-ffn"/>
+                    <navigationItem key="navigationItem" title="Title" id="xl6-ws-ffn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BEp-r6-HTy">
+                            <connections>
+                                <segue destination="zlg-as-rWK" kind="presentation" id="Qnk-Hd-bTg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HzD-dO-JVh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2657" y="-159"/>
+            <point key="canvasLocation" x="3566.666666666667" y="-159.375"/>
         </scene>
         <!--Item-->
         <scene sceneID="bpf-Mf-7Ei">
@@ -451,16 +453,34 @@
             </objects>
             <point key="canvasLocation" x="19" y="-350"/>
         </scene>
+        <!--My Plants-->
+        <scene sceneID="McE-bB-N1Z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2nA-o0-EOi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Plants" image="house" catalog="system" id="kTP-Cq-JJX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oyq-wi-Xdk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ukW-W2-IXY" kind="relationship" relationship="rootViewController" id="u4z-de-1ZB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mVb-W9-BK5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2656.521739130435" y="-159.375"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Logo" width="1005" height="1005"/>
         <image name="evie-s-w1JE5duY62M-unsplash" width="2092" height="2801"/>
-        <image name="gear" catalog="system" width="64" height="60"/>
+        <image name="gear" catalog="system" width="64" height="58"/>
         <image name="house" catalog="system" width="64" height="54"/>
-        <image name="pencil" catalog="system" width="64" height="58"/>
+        <image name="pencil" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XoU-c4-oWL"/>
-        <segue reference="xin-O1-CqN"/>
+        <segue reference="yEN-am-c5b"/>
     </inferredMetricsTieBreakers>
 </document>
