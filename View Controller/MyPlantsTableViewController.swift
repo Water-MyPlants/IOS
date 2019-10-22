@@ -15,11 +15,11 @@ class MyPlantsTableViewController: UITableViewController {
     
     lazy var fetchedResultsController: NSFetchedResultsController<Plant> = {
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
-        let plantDescriptor = NSSortDescriptor(key: "myPlants", ascending: false)
+        let plantDescriptor = NSSortDescriptor(key: "species", ascending: false)
         
         let moc = CoreDataStack.shared.mainContext
         fetchRequest.sortDescriptors = [plantDescriptor]
-        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: "myPlants", cacheName: nil)
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
         frc.delegate = self
         do {
             try frc.performFetch()

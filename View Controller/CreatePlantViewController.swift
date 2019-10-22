@@ -9,15 +9,20 @@
 import UIKit
 
 class CreatePlantViewController: UIViewController {
+    
+    var plantController: PlantController?
 
+    var plant : Plant? {
+        didSet {
+            // updateViews()
+        }
+    }
     @IBOutlet weak var plantSpeciesTextField: UITextField!
     @IBOutlet weak var plantNickNameTextField: UITextField!
     @IBOutlet weak var plantPicImageView: UIImageView!
     @IBOutlet weak var waterIntervalDatePicker: UIDatePicker!
     @IBOutlet weak var savePlantButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
-    
-    var plantController: PlantController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +32,28 @@ class CreatePlantViewController: UIViewController {
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         
+        let h2oFrequency = waterIntervalDatePicker.countDownDuration
+        
+        if let plantSpecies = plantSpeciesTextField.text,
+            let plantNickname = plantNickNameTextField.text
+            //let plantImage = plantPicImageView.image
+        {
+            
+            if let plant = plant {
+                plantController?.createPlant(with: nil, species: plantSpecies, nickName: plantNickname, h2oFrequency: h2oFrequency, image: nil, userID: nil)
+            } else {
+                plantController?.createPlant(with: nil, species: plantSpecies, nickName: plantNickname, h2oFrequency: h2oFrequency, image: nil, userID: nil, context: CoreDataStack.shared.mainContext)
+                
+            }
+        }
+        //navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
+        print("Hey we're in here")
     }
     
     
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
-        
+        dismiss(animated: true, completion: nil)
         
     }
     
