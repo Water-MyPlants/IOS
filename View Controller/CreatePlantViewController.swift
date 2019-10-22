@@ -37,19 +37,17 @@ class CreatePlantViewController: UIViewController {
     
     func createPlant() {
         guard let species = plantSpeciesTextField.text,
-            let nickname = plantNickNameTextField.text
-//            let image = plantPicImageView.image
+            let nickName = plantNickNameTextField.text,
+            let image = plantPicImageView.image,
+            let imageData = image.accessibilityIdentifier,
+            let h2oFrequency = waterIntervalDatePicker?.countDownDuration
             else { return
-            
-        
-        
-         
         DispatchQueue.main.async {
             self.savePlantButton.isEnabled = true
         }
         return
     }
-        plantController?.addPlant(species: species, nickName: nickname)
+        plantController?.createPlant(with: nil, species: species, nickName: nickName, h2oFrequency: h2oFrequency, image: imageData, userID: nil)
 }
     /*
     // MARK: - Navigation

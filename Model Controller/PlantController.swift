@@ -112,7 +112,7 @@ class PlantController{
             plant.nickName = representation.nickName
             plant.image = representation.image
             plant.species = representation.species
-            plant.h2oFrequency = representation.h2oFrequency
+            guard let plant.h2oFrequency = representation.h2oFrequency else { return }
 
             // We just updated an entry, we don't need to create a new Entry for this identifier
             plantsToCreate.removeValue(forKey: identifier)
@@ -146,23 +146,28 @@ class PlantController{
                }.resume()
        }
 
-    // MARK: Add Plant
-    func addPlant(species: String, nickName: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-        context.performAndWait {
-            guard let plant = PlantRepresentation(id: nil, nickName: nickName, species: species, h2oFrequency: nil, userID: nil, image: nil) else { return }
+    // MARK: Create Plant
+    func createPlant(with id: Int64?, species: String?, nickName: String?, h2oFrequency: Double?, image: String?, userID: Int64?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        guard let id = id,
+        let species = species,
+        let nickName = nickName,
+        let h2oFrequency = h2oFrequency,
+        let image = image,
+        let userID = userID else { return }
+           context.performAndWait {
+            let plant = Plant(id: id, nickName: nickName, species: species, h2oFrequency: h2oFrequency, image: image, userID: userID)
+               print(print)
+               
+               do {
+                   try CoreDataStack.shared.save(context: context)
+               } catch {
+                   NSLog("Error saving context when creating new course: \(error)")
+               }
             
-            context.performAndWait{
-                let plant = Plant
-            }
-
-            do {
-                try CoreDataStack.shared.save(context: context)
-            } catch {
-                NSLog("Error when saving context when adding Plant: \(error)")
-            }
             put(plant: plant)
         }
     }
+    
     
 // MARK: Delete Plant
     func deletePlant(plant: Plant, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {

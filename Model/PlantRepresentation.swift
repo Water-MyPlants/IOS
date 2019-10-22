@@ -21,7 +21,7 @@ struct PlantRepresentation: Codable {
     let id: Int64?
     let nickName: String?
     let species: String?
-    let h2oFrequency: String?
+    let h2oFrequency: Double?
     let userID: Int64?
     let image: String?
     
