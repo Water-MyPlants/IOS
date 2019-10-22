@@ -2,13 +2,12 @@
 //  CoreDataStack.swift
 //  Water da Plants
 //
-//  Created by William Chen on 10/19/19.
+//  Created by Andrew Ruiz on 10/22/19.
 //  Copyright © 2019 Jonalynn Masters. All rights reserved.
 //
 
 import Foundation
 import CoreData
-
 
 class CoreDataStack {
 

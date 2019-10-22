@@ -15,6 +15,7 @@
 		4F951415235E2C86005D251B /* MyPlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F951414235E2C86005D251B /* MyPlantTableViewCell.swift */; };
 		866B07EE235ABAC800EBD691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 866B07ED235ABAC800EBD691 /* Assets.xcassets */; };
 		86AA8A19235C17AF00EC5AA7 /* SearchPlantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AA8A18235C17AF00EC5AA7 /* SearchPlantsTableViewController.swift */; };
+		86BB1858235F7F0600C5B2BC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB1857235F7F0600C5B2BC /* CoreDataStack.swift */; };
 		86C30536235BCD5A00FF902B /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C30535235BCD5A00FF902B /* UserLogin.swift */; };
 		86C30538235BCE3D00FF902B /* PlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C30537235BCE3D00FF902B /* PlantController.swift */; };
 		86C30541235BDE8800FF902B /* plants.json in Resources */ = {isa = PBXBuildFile; fileRef = 86C30540235BDE8800FF902B /* plants.json */; };
@@ -30,7 +31,6 @@
 		9EE3899C235BB44B009C02B1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3899B235BB44B009C02B1 /* User.swift */; };
 		9EE3899F235BB4FA009C02B1 /* WaterDaPlants.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3899D235BB4FA009C02B1 /* WaterDaPlants.xcdatamodeld */; };
 		9EE389A2235BB64E009C02B1 /* PlantRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE389A1235BB64E009C02B1 /* PlantRepresentation.swift */; };
-		9EE389A6235BB90B009C02B1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE389A5235BB90B009C02B1 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +45,8 @@
 		4F951414235E2C86005D251B /* MyPlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantTableViewCell.swift; sourceTree = "<group>"; };
 		866B07ED235ABAC800EBD691 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86AA8A18235C17AF00EC5AA7 /* SearchPlantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlantsTableViewController.swift; sourceTree = "<group>"; };
+		86BB1856235F7DEB00C5B2BC /* Plant 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Plant 2.xcdatamodel"; sourceTree = "<group>"; };
+		86BB1857235F7F0600C5B2BC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		86C30535235BCD5A00FF902B /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
 		86C30537235BCE3D00FF902B /* PlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantController.swift; sourceTree = "<group>"; };
 		86C30540235BDE8800FF902B /* plants.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = plants.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
@@ -60,7 +62,6 @@
 		9EE3899B235BB44B009C02B1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9EE3899E235BB4FA009C02B1 /* Login.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Login.xcdatamodel; sourceTree = "<group>"; };
 		9EE389A1235BB64E009C02B1 /* PlantRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRepresentation.swift; sourceTree = "<group>"; };
-		9EE389A5235BB90B009C02B1 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,10 +147,10 @@
 				9EE3899B235BB44B009C02B1 /* User.swift */,
 				86F7E529235E6B9D0082333D /* Bearer.swift */,
 				86C30535235BCD5A00FF902B /* UserLogin.swift */,
-				9EE389A5235BB90B009C02B1 /* CoreDataStack.swift */,
 				9EE389A1235BB64E009C02B1 /* PlantRepresentation.swift */,
 				86C30540235BDE8800FF902B /* plants.json */,
 				4F95140F235BBF12005D251B /* Plant+Convenience.swift */,
+				86BB1857235F7F0600C5B2BC /* CoreDataStack.swift */,
 				9EE3899D235BB4FA009C02B1 /* WaterDaPlants.xcdatamodeld */,
 			);
 			path = Model;
@@ -238,11 +239,11 @@
 				4F9513FD235A8CD3005D251B /* SceneDelegate.swift in Sources */,
 				86AA8A19235C17AF00EC5AA7 /* SearchPlantsTableViewController.swift in Sources */,
 				4F951415235E2C86005D251B /* MyPlantTableViewCell.swift in Sources */,
-				9EE389A6235BB90B009C02B1 /* CoreDataStack.swift in Sources */,
 				9EE38996235BB1B5009C02B1 /* UserSettingsViewController.swift in Sources */,
 				4F951410235BBF12005D251B /* Plant+Convenience.swift in Sources */,
 				9EE3899F235BB4FA009C02B1 /* WaterDaPlants.xcdatamodeld in Sources */,
 				9EE38999235BB224009C02B1 /* PlantSearchTableViewCell.swift in Sources */,
+				86BB1858235F7F0600C5B2BC /* CoreDataStack.swift in Sources */,
 				9EE38990235BB0FF009C02B1 /* MyPlantsTableViewController.swift in Sources */,
 				9EE389A2235BB64E009C02B1 /* PlantRepresentation.swift in Sources */,
 				86C30536235BCD5A00FF902B /* UserLogin.swift in Sources */,
@@ -449,9 +450,10 @@
 		9EE3899D235BB4FA009C02B1 /* WaterDaPlants.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				86BB1856235F7DEB00C5B2BC /* Plant 2.xcdatamodel */,
 				9EE3899E235BB4FA009C02B1 /* Login.xcdatamodel */,
 			);
-			currentVersion = 9EE3899E235BB4FA009C02B1 /* Login.xcdatamodel */;
+			currentVersion = 86BB1856235F7DEB00C5B2BC /* Plant 2.xcdatamodel */;
 			path = WaterDaPlants.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

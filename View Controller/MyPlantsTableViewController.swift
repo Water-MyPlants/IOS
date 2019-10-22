@@ -14,17 +14,20 @@ class MyPlantsTableViewController: UITableViewController {
     let plantController = PlantController()
     
     lazy var fetchedResultsController: NSFetchedResultsController<Plant> = {
-           let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
-           let moc = CoreDataStack.shared.mainContext
-           let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: "myPlants", cacheName: nil)
-           frc.delegate = self
-           do {
-               try frc.performFetch()
-           } catch {
-               fatalError("Error performing fetch for frc: \(error)")
-           }
-           return frc
-       }()
+        let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
+        let plantDescriptor = NSSortDescriptor(key: "myPlants", ascending: false)
+        
+        let moc = CoreDataStack.shared.mainContext
+        fetchRequest.sortDescriptors = [plantDescriptor]
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: "myPlants", cacheName: nil)
+        frc.delegate = self
+        do {
+            try frc.performFetch()
+        } catch {
+            fatalError("Error performing fetch for frc: \(error)")
+        }
+        return frc
+    }()
 
     
     @objc func beginRefresh() {
