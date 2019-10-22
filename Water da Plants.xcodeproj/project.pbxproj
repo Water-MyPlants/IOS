@@ -23,7 +23,7 @@
 		9EE3898A235BB053009C02B1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE38989235BB053009C02B1 /* RegisterViewController.swift */; };
 		9EE3898C235BB0A9009C02B1 /* HomeScreenTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3898B235BB0A9009C02B1 /* HomeScreenTabBarController.swift */; };
 		9EE38990235BB0FF009C02B1 /* MyPlantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3898F235BB0FF009C02B1 /* MyPlantsTableViewController.swift */; };
-		9EE38992235BB159009C02B1 /* MyPlantsWaterScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE38991235BB159009C02B1 /* MyPlantsWaterScheduleViewController.swift */; };
+		9EE38992235BB159009C02B1 /* CreatePlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE38991235BB159009C02B1 /* CreatePlantViewController.swift */; };
 		9EE38994235BB185009C02B1 /* MyPlantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE38993235BB185009C02B1 /* MyPlantDetailViewController.swift */; };
 		9EE38996235BB1B5009C02B1 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE38995235BB1B5009C02B1 /* UserSettingsViewController.swift */; };
 		9EE38999235BB224009C02B1 /* PlantSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE38998235BB224009C02B1 /* PlantSearchTableViewCell.swift */; };
@@ -53,7 +53,7 @@
 		9EE38989235BB053009C02B1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = "View Controller/RegisterViewController.swift"; sourceTree = SOURCE_ROOT; };
 		9EE3898B235BB0A9009C02B1 /* HomeScreenTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTabBarController.swift; sourceTree = "<group>"; };
 		9EE3898F235BB0FF009C02B1 /* MyPlantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsTableViewController.swift; sourceTree = "<group>"; };
-		9EE38991235BB159009C02B1 /* MyPlantsWaterScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsWaterScheduleViewController.swift; sourceTree = "<group>"; };
+		9EE38991235BB159009C02B1 /* CreatePlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlantViewController.swift; sourceTree = "<group>"; };
 		9EE38993235BB185009C02B1 /* MyPlantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantDetailViewController.swift; sourceTree = "<group>"; };
 		9EE38995235BB1B5009C02B1 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		9EE38998235BB224009C02B1 /* PlantSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantSearchTableViewCell.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 				9EE38989235BB053009C02B1 /* RegisterViewController.swift */,
 				9EE3898B235BB0A9009C02B1 /* HomeScreenTabBarController.swift */,
 				9EE3898F235BB0FF009C02B1 /* MyPlantsTableViewController.swift */,
-				9EE38991235BB159009C02B1 /* MyPlantsWaterScheduleViewController.swift */,
+				9EE38991235BB159009C02B1 /* CreatePlantViewController.swift */,
 				86AA8A18235C17AF00EC5AA7 /* SearchPlantsTableViewController.swift */,
 				9EE38993235BB185009C02B1 /* MyPlantDetailViewController.swift */,
 			);
@@ -233,7 +233,7 @@
 				4F9513FB235A8CD3005D251B /* AppDelegate.swift in Sources */,
 				9EE3898C235BB0A9009C02B1 /* HomeScreenTabBarController.swift in Sources */,
 				9EE3899C235BB44B009C02B1 /* User.swift in Sources */,
-				9EE38992235BB159009C02B1 /* MyPlantsWaterScheduleViewController.swift in Sources */,
+				9EE38992235BB159009C02B1 /* CreatePlantViewController.swift in Sources */,
 				9EE38994235BB185009C02B1 /* MyPlantDetailViewController.swift in Sources */,
 				4F9513FD235A8CD3005D251B /* SceneDelegate.swift in Sources */,
 				86AA8A19235C17AF00EC5AA7 /* SearchPlantsTableViewController.swift in Sources */,

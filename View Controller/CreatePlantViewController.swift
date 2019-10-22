@@ -8,15 +8,31 @@
 
 import UIKit
 
-class MyPlantsWaterScheduleViewController: UIViewController {
+class CreatePlantViewController: UIViewController {
 
+    @IBOutlet weak var plantSpeciesTextField: UITextField!
+    @IBOutlet weak var plantNickNameTextField: UITextField!
+    @IBOutlet weak var plantPicImageView: UIImageView!
+    @IBOutlet weak var waterIntervalDatePicker: UIDatePicker!
+    @IBOutlet weak var savePlantButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func saveButtonTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func cancelButtonTapped(_ sender: UIButton) {
+        
+        
+    }
+    
     /*
     // MARK: - Navigation
 
