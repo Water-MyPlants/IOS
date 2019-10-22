@@ -23,12 +23,12 @@ class PlantSearchTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    @IBAction func addPlantTapped(_ sender: UIButton) {
-        
-        guard let plantController = plantController,
-            let plantRep = plantRepresentation else { return }
-        plantController.addPlant(plantRepresentation: plantRep)
-    }
+//    @IBAction func addPlantTapped(_ sender: UIButton) {
+//
+//        guard let plantController = plantController,
+//            let plantRep = plantRepresentation else { return }
+//        plantController.addPlant(plantRepresentation: plantRep)
+//    }
     
     
     

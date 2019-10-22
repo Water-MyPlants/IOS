@@ -17,7 +17,7 @@ class CreatePlantViewController: UIViewController {
     @IBOutlet weak var savePlantButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
-    
+    var plantController: PlantController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +26,31 @@ class CreatePlantViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
+        
     }
+    
     
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
         
         
     }
     
+    func createPlant() {
+        guard let species = plantSpeciesTextField.text,
+            let nickname = plantNickNameTextField.text
+//            let image = plantPicImageView.image
+            else { return
+            
+        
+        
+         
+        DispatchQueue.main.async {
+            self.savePlantButton.isEnabled = true
+        }
+        return
+    }
+        plantController?.addPlant(species: species, nickName: nickname)
+}
     /*
     // MARK: - Navigation
 

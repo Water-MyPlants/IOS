@@ -147,9 +147,13 @@ class PlantController{
        }
 
     // MARK: Add Plant
-    func addPlant(plantRepresentation: PlantRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    func addPlant(species: String, nickName: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         context.performAndWait {
-            guard let plant = Plant(plantRepresentation: plantRepresentation, context: context) else { return }
+            guard let plant = PlantRepresentation(id: nil, nickName: nickName, species: species, h2oFrequency: nil, userID: nil, image: nil) else { return }
+            
+            context.performAndWait{
+                let plant = Plant
+            }
 
             do {
                 try CoreDataStack.shared.save(context: context)
@@ -290,7 +294,7 @@ class PlantController{
             let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
             fetchRequest.predicate = predicate
 
-            var plant: Plant? = nil
+            var plant: Plant?
 
             context.performAndWait {
                 do {
