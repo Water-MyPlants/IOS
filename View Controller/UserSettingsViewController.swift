@@ -7,15 +7,52 @@
 //
 
 import UIKit
+import CoreData
 
 class UserSettingsViewController: UIViewController {
-
+    
+    var plantController: PlantController?
+    
+    @IBOutlet weak var updatePhoneNumberTextField: UITextField!
+    @IBOutlet weak var updatePasswordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var updateButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func updateButtonTapped(_ sender: Any) {
+        
+}
+       func updateUser() {
+            guard let phoneNumber = updatePhoneNumberTextField.text,
+                let password = updatePasswordTextField.text,
+                let confirmPassword = confirmPasswordTextField.text,
+                !phoneNumber.isEmpty,
+                !password.isEmpty,
+                !confirmPassword.isEmpty else {
+                    updateButton.isEnabled = true
+                    return
+            }
+            
+            plantController?.updateUser(password: password, phoneNumber: Int(phoneNumber) ?? 0, id: nil) { (error) in
+                DispatchQueue.main.async {
+                    if let error = error {
+                        NSLog("Error signing up: \(error)")
+                        self.updateButton.isEnabled = false
+                        return
+                    }
+                    print("sign up complete")
+                    self.dismiss(animated: true, completion: nil)
+                }
+
+            }
+        }
+    }
+
+
 
     /*
     // MARK: - Navigation
@@ -27,4 +64,5 @@ class UserSettingsViewController: UIViewController {
     }
     */
 
-}
+
+
