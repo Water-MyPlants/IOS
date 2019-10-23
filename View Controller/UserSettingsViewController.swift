@@ -35,10 +35,10 @@ class UserSettingsViewController: UIViewController, UITextFieldDelegate {
     }
     @IBAction func updateButtonTapped(_ sender: Any) {
        print("update button tapped")
-        updateButton.isEnabled = true
+        updateButton.isEnabled = false
         updateUser()
-        
 }
+    
        func validatePassword() {
              // To Do: textField.isEmpty logic
            let errorMsg = "Passwords do not match "
