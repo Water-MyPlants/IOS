@@ -40,13 +40,13 @@ class RegisterViewController: UIViewController {
     
     
     func createUser() {
+        
         guard let userName = usernameTextField.text,
             let password = passwordTextField.text,
             let phoneNumber = phoneNumberTextField.text,
             !phoneNumber.isEmpty,
             !userName.isEmpty,
             !password.isEmpty  else {
-                createButton.isEnabled = true
                 return
         }
         plantController.signUp(username: userName, password: password, phoneNumber: Int(phoneNumber) ?? 0, id: nil) { (error) in
