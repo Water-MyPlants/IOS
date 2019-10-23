@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
     
     
     
+    
     private func login() {
         guard let username = usernameTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty else { return }
         
@@ -65,6 +66,21 @@ class LoginViewController: UIViewController {
         loginButton.isEnabled = false
         login()
     }
+}
+
+
+extension LoginViewController: UITextFieldDelegate {
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let text = textField.text,
+            !text.isEmpty {
+            switch textField {
+            case usernameTextField:
+                passwordTextField.becomeFirstResponder()
+            default:
+                textField.resignFirstResponder()
+            }
+        }
+        return false
+    }
 }
