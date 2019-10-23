@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="4607" y="-815"/>
         </scene>
-        <!--My Plant Detail View Controller-->
+        <!--Plant Detail View-->
         <scene sceneID="klo-aa-RMu">
             <objects>
-                <viewController id="PNf-Z3-I9t" customClass="MyPlantDetailViewController" customModule="Water_da_Plants" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Plant Detail View" id="PNf-Z3-I9t" customClass="MyPlantDetailViewController" customModule="Water_da_Plants" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KCB-tM-auB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,6 +136,13 @@
                                     <constraint firstAttribute="height" constant="353" id="f4B-DI-UG0"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Plant Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2t-Mc-ivv">
+                                <rect key="frame" x="147" y="187" width="120" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -157,7 +164,10 @@
                     <navigationItem key="navigationItem" id="Mxt-Cr-JFh"/>
                     <connections>
                         <outlet property="nickNameLabel" destination="jak-r2-Yrh" id="GHP-9j-9UN"/>
+                        <outlet property="plantNickNameLabelTest" destination="O2t-Mc-ivv" id="ffN-kW-dr3"/>
+                        <outlet property="plantPictureImageView" destination="Dn6-uk-zI7" id="oCV-ik-xh2"/>
                         <outlet property="plantSpeciesLabel" destination="hIJ-su-alI" id="Iyd-Eo-HAK"/>
+                        <outlet property="timeUntilNextWateringLabel" destination="1Jg-mi-Rdw" id="WZw-Yb-Hdd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ltu-5l-15f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -410,7 +420,7 @@
                                 <connections>
                                     <outlet property="nickNameLabel" destination="cfD-pl-Np0" id="uac-bf-Qe6"/>
                                     <outlet property="speciesLabel" destination="gEb-on-n1f" id="Tyz-ge-MqT"/>
-                                    <segue destination="PNf-Z3-I9t" kind="show" id="xin-O1-CqN"/>
+                                    <segue destination="PNf-Z3-I9t" kind="show" identifier="PlantDetailViewSegue" id="xin-O1-CqN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -156,10 +156,8 @@ class PlantController{
            context.performAndWait {
            
             let plant = Plant(id: id, nickName: nickName, species: species, image: nil, h2oFrequency: h2oFrequency, userID: nil)
-            let onePlant = PlantRepresentation(id: id, nickName: nickName, species: species, h2oFrequency: h2oFrequency, userID: nil, image: nil)
-            plants.append(onePlant)
-               print(onePlant)
-               
+//            let onePlant = PlantRepresentation(id: id, nickName: nickName, species: species, h2oFrequency: h2oFrequency, userID: nil, image: nil)
+            
                do {
                    try CoreDataStack.shared.save(context: context)
                } catch {

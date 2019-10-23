@@ -135,6 +135,11 @@ class MyPlantsTableViewController: UITableViewController {
                 guard let createTVC = segue.destination as? CreatePlantViewController else { return }
                 createTVC.plantController = plantController
             }
+            if segue.identifier == "PlantDetailViewSegue" {
+                guard let detailVC = segue.destination as? MyPlantDetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow else { return }
+                detailVC.plant = fetchedResultsController.object(at: indexPath)
+            }
         }
         
     }
