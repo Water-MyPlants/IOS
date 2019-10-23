@@ -76,4 +76,24 @@ func requestLocalNotificationPermissions() {
 
 
 }
+    func scheduleDailyReminderNotification(name: String, times: Date, calendar: Calendar) {
+           let df = TimeInterval()
+        df = .none
+           df.timeStyle = .short
+           let time = df.string(from: times)
+           let dateComponents = calendar.dateComponents([.hour, .minute], from: times)
+           let content = UNMutableNotificationContent()
+           content.title = "It's time to water \(name)."
+           content.body = "It's \(time)! \(name) is getting thirsty."
+           let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+           let request = UNNotificationRequest(identifier: "PlantIdentifier", content: content, trigger: trigger)
+           let center = UNUserNotificationCenter.current()
+        center.delegate = self as? UNUserNotificationCenterDelegate
+           center.add(request) { (error) in
+               if let error = error {
+                   print("There was an error scheduling a notification: \(error)")
+                   return
+            }
+        }
+    }
 }

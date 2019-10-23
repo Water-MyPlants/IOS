@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pSD-h7-VrA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pSD-h7-VrA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -115,7 +115,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UWQ-e5-QZf">
                                 <rect key="frame" x="0.0" y="110" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Plant Nickname" id="jak-r2-Yrh"/>
+                                    <navigationItem title="Species Name" id="jak-r2-Yrh" userLabel="Species Name"/>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Until Next Watering" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jg-mi-Rdw">
@@ -124,7 +124,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Species Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIJ-su-alI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIJ-su-alI" userLabel="Nickname">
                                 <rect key="frame" x="0.0" y="227" width="414" height="55"/>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="35"/>
                                 <nil key="textColor"/>
@@ -136,13 +136,6 @@
                                     <constraint firstAttribute="height" constant="353" id="f4B-DI-UG0"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Plant Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2t-Mc-ivv">
-                                <rect key="frame" x="147" y="187" width="120" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -163,10 +156,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Mxt-Cr-JFh"/>
                     <connections>
-                        <outlet property="nickNameLabel" destination="jak-r2-Yrh" id="GHP-9j-9UN"/>
-                        <outlet property="plantNickNameLabelTest" destination="O2t-Mc-ivv" id="ffN-kW-dr3"/>
+                        <outlet property="nickName" destination="hIJ-su-alI" id="Wbl-CB-kab"/>
                         <outlet property="plantPictureImageView" destination="Dn6-uk-zI7" id="oCV-ik-xh2"/>
-                        <outlet property="plantSpeciesLabel" destination="hIJ-su-alI" id="Iyd-Eo-HAK"/>
+                        <outlet property="speciesTitle" destination="jak-r2-Yrh" id="2B2-Tg-lh0"/>
                         <outlet property="timeUntilNextWateringLabel" destination="1Jg-mi-Rdw" id="WZw-Yb-Hdd"/>
                     </connections>
                 </viewController>
@@ -398,7 +390,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FAh-yl-RZv" id="7EW-VO-GjO" customClass="MyPlantTableViewCell" customModule="Water_da_Plants" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="382.5" height="55.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cfD-pl-Np0" userLabel="Nickname">
@@ -483,8 +475,8 @@
     <resources>
         <image name="Logo" width="1005" height="1005"/>
         <image name="evie-s-w1JE5duY62M-unsplash" width="2092" height="2801"/>
-        <image name="gear" catalog="system" width="64" height="60"/>
+        <image name="gear" catalog="system" width="64" height="58"/>
         <image name="house" catalog="system" width="64" height="54"/>
-        <image name="pencil" catalog="system" width="64" height="58"/>
+        <image name="pencil" catalog="system" width="64" height="56"/>
     </resources>
 </document>

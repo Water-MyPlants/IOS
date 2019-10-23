@@ -9,16 +9,16 @@
 import UIKit
 
 class MyPlantDetailViewController: UIViewController {
-
+    @IBOutlet weak var speciesTitle: UINavigationItem!
+    
+    @IBOutlet weak var nickName: UILabel!
     var plant: Plant? {
         didSet {
-            updateViews()
+           
         }
     }
     
-    @IBOutlet weak var nickNameLabel: UINavigationItem!
-    
-    @IBOutlet weak var plantSpeciesLabel: UILabel!
+
     
     @IBOutlet weak var plantPictureImageView: UIImageView!
     
@@ -27,7 +27,7 @@ class MyPlantDetailViewController: UIViewController {
     @IBOutlet weak var plantNickNameLabelTest: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+         updateViews()
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -38,8 +38,8 @@ class MyPlantDetailViewController: UIViewController {
     
     func updateViews() {
         guard let plant = self.plant else { return }
-        plantNickNameLabelTest.text = plant.nickName
-        plantSpeciesLabel.text = plant.species
+        speciesTitle.title = plant.species
+        nickName.text = plant.nickName
     }
      
     // MARK: - Navigation
