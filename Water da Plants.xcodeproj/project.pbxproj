@@ -19,6 +19,7 @@
 		86C30538235BCE3D00FF902B /* PlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C30537235BCE3D00FF902B /* PlantController.swift */; };
 		86C30541235BDE8800FF902B /* plants.json in Resources */ = {isa = PBXBuildFile; fileRef = 86C30540235BDE8800FF902B /* plants.json */; };
 		86F7E52A235E6B9D0082333D /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F7E529235E6B9D0082333D /* Bearer.swift */; };
+		9EBD0398235FD592009D0612 /* Monkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBD0397235FD592009D0612 /* Monkey.swift */; };
 		9EE38988235BB032009C02B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE38987235BB032009C02B1 /* LoginViewController.swift */; };
 		9EE3898A235BB053009C02B1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE38989235BB053009C02B1 /* RegisterViewController.swift */; };
 		9EE3898C235BB0A9009C02B1 /* HomeScreenTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3898B235BB0A9009C02B1 /* HomeScreenTabBarController.swift */; };
@@ -49,6 +50,7 @@
 		86C30537235BCE3D00FF902B /* PlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantController.swift; sourceTree = "<group>"; };
 		86C30540235BDE8800FF902B /* plants.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = plants.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		86F7E529235E6B9D0082333D /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
+		9EBD0397235FD592009D0612 /* Monkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monkey.swift; sourceTree = "<group>"; };
 		9EE38987235BB032009C02B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View Controller/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 		9EE38989235BB053009C02B1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = "View Controller/RegisterViewController.swift"; sourceTree = SOURCE_ROOT; };
 		9EE3898B235BB0A9009C02B1 /* HomeScreenTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTabBarController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		4F9513EE235A8CD3005D251B = {
 			isa = PBXGroup;
 			children = (
+				9EBD0396235FD56B009D0612 /* Helpers */,
 				86C30539235BCE4100FF902B /* Model Controller */,
 				9EE3899A235BB43C009C02B1 /* Model */,
 				9EE38997235BB1F2009C02B1 /* Table View Cell */,
@@ -113,6 +116,14 @@
 				86C30537235BCE3D00FF902B /* PlantController.swift */,
 			);
 			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		9EBD0396235FD56B009D0612 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9EBD0397235FD592009D0612 /* Monkey.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		9EE38986235BAFF1009C02B1 /* View Controller */ = {
@@ -239,6 +250,7 @@
 				4F951410235BBF12005D251B /* Plant+Convenience.swift in Sources */,
 				9EE3899F235BB4FA009C02B1 /* WaterDaPlants.xcdatamodeld in Sources */,
 				9EE38999235BB224009C02B1 /* PlantSearchTableViewCell.swift in Sources */,
+				9EBD0398235FD592009D0612 /* Monkey.swift in Sources */,
 				86BB1858235F7F0600C5B2BC /* CoreDataStack.swift in Sources */,
 				9EE38990235BB0FF009C02B1 /* MyPlantsTableViewController.swift in Sources */,
 				9EE389A2235BB64E009C02B1 /* PlantRepresentation.swift in Sources */,

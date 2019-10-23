@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import UserNotifications
 
 class LoginViewController: UIViewController {
     
@@ -19,7 +19,10 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        requestLocalNotificationPermissions()
     }
+    
+    
     
     private func login() {
         guard let username = usernameTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty else { return }
