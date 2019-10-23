@@ -25,9 +25,15 @@ class MyPlantDetailViewController: UIViewController {
     @IBOutlet weak var timeUntilNextWateringLabel: UILabel!
     
     @IBOutlet weak var plantNickNameLabelTest: UILabel!
+    
+    var countdown = Countdown()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-         updateViews()
+         
+        
+//        countdown.timeRemaining = plant.
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +46,12 @@ class MyPlantDetailViewController: UIViewController {
         guard let plant = self.plant else { return }
         speciesTitle.title = plant.species
         nickName.text = plant.nickName
+        NotificationHelper.getTimeRemainingForPlant(for: plant) { (timeRemaining) in
+            guard let timeRemaining = timeRemaining else { return }
+            self.countdown.delegate = self
+            self.countdown.duration = timeRemaining
+            self.countdown.start()
+        }
     }
      
     // MARK: - Navigation
@@ -50,5 +62,26 @@ class MyPlantDetailViewController: UIViewController {
 //        // Pass the selected object to the new view controller.
 //    }
 
+    private var dateFormatter: DateFormatter = {
+         let formatter = DateFormatter()
+         formatter.dateFormat = "HH:mm:ss"
+         formatter.timeZone = TimeZone(secondsFromGMT: 0)
+         return formatter
+     }()
 
+}
+
+extension MyPlantDetailViewController: CountdownDelegate {
+    func countdownDidUpdate(timeRemaining: TimeInterval) {
+        timeUntilNextWateringLabel.text = string(from: timeRemaining)
+    }
+    
+    func countdownDidFinish() {
+        updateViews()
+    }
+    
+    private func string(from duration: TimeInterval) -> String {
+        let date = Date(timeIntervalSinceReferenceDate: duration)
+        return dateFormatter.string(from: date)
+    }
 }

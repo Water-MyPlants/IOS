@@ -148,16 +148,17 @@ class PlantController{
        }
 
     // MARK: Create Plant
-    func createPlant(with id: String?, species: String?, nickName: String?, h2oFrequency: Double?, image: String?, userID: String?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    func createPlant(with species: String?, nickName: String?, h2oFrequency: Double?, image: String?, userID: String?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         guard let species = species,
         let nickName = nickName,
         let h2oFrequency = h2oFrequency
             else { return }
            context.performAndWait {
-           
-            let plant = Plant(id: id, nickName: nickName, species: species, image: nil, h2oFrequency: h2oFrequency, userID: nil)
-//            let onePlant = PlantRepresentation(id: id, nickName: nickName, species: species, h2oFrequency: h2oFrequency, userID: nil, image: nil)
+            let number = Int.random(in: 0...1_000_000).description
+            let plant = Plant(id: number, nickName: nickName, species: species, image: nil, h2oFrequency: h2oFrequency, userID: nil)
             
+            NotificationHelper.scheduleNotification(at: h2oFrequency, for: plant)
+      
                do {
                    try CoreDataStack.shared.save(context: context)
                } catch {
@@ -405,38 +406,34 @@ extension PlantController {
 //               print("Error saving data: \(error)")
 //           }
 //       }
-//       func updateUser(firstName: String, lastName: String, password: String, completion: @escaping (NetworkError?) -> Void) {
-//           guard currentUser != nil, let userId = currentUser?.id else { return }
-//           guard let token = currentUser?.token else {
-//               completion(.noToken)
-//               return
-//           }
-//           print(token)
-//           // local update
-//           currentUser?.firstName = firstName
-//           currentUser?.lastName = lastName
-//           currentUser?.password = password
-//           let updateJson = ["firstName": firstName, "lastName": lastName, "password": password]
-//           let updateURL = baseURL.appendingPathComponent("api/users/\(userId)")
-//           var request = URLRequest(url: updateURL)
-//           request.httpMethod = HTTPMethod.put.rawValue
-//           request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//           request.addValue(token, forHTTPHeaderField: "Authorization")
-//           do {
-//               let userData = try JSONEncoder().encode(updateJson)
-//               request.httpBody = userData
-//           } catch {
-//               NSLog("Error encoding user when updating: \(error)")
-//               completion(.noEncode)
-//               return
-//           }
-//           URLSession.shared.dataTask(with: request) { (data, response, error) in
-//               if let error = error {
-//                   NSLog("Error posting url request when update: \(error)")
-//                   completion(.badRequest)
-//                   return
-//               }
-//               completion(nil)
-//           }.resume()
-//       }
+       func updateUser(password: String, phoneNumber: Int, id: Int?, completion: @escaping (NetworkError?) -> Void) {
+           var currentUser = User(phoneNumber: phoneNumber, password: password, id: id)
+           // local update
+    currentUser.id = id
+        currentUser.phoneNumber = phoneNumber
+        currentUser.password = password
+        var updateJson = ["password": "\(password)", "phoneNumber": "\(phoneNumber)"]
+        let updateURL = baseURL.appendingPathComponent("api/user/\(currentUser.id)")
+           var request = URLRequest(url: updateURL)
+           request.httpMethod = HTTPMethod.put.rawValue
+           request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+           request.addValue("\(bearer)", forHTTPHeaderField: "Authorization")
+           do {
+               print(currentUser)
+               let userData = try JSONEncoder().encode(updateJson)
+               request.httpBody = userData
+           } catch {
+               NSLog("Error encoding user when updating: \(error)")
+               completion(.noEncode)
+               return
+           }
+           URLSession.shared.dataTask(with: request) { (data, response, error) in
+               if let error = error {
+                   NSLog("Error posting url request when update: \(error)")
+                   completion(.badRequest)
+                   return
+               }
+               completion(nil)
+           }.resume()
+       }
     }

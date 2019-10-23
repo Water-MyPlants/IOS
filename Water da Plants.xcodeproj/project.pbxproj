@@ -13,6 +13,7 @@
 		4F951407235A8CD8005D251B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F951405235A8CD8005D251B /* LaunchScreen.storyboard */; };
 		4F951410235BBF12005D251B /* Plant+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95140F235BBF12005D251B /* Plant+Convenience.swift */; };
 		4F951415235E2C86005D251B /* MyPlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F951414235E2C86005D251B /* MyPlantTableViewCell.swift */; };
+		4FCFB2442360B8650009304C /* CountdownHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCFB2432360B8650009304C /* CountdownHelper.swift */; };
 		866B07EE235ABAC800EBD691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 866B07ED235ABAC800EBD691 /* Assets.xcassets */; };
 		86BB1858235F7F0600C5B2BC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB1857235F7F0600C5B2BC /* CoreDataStack.swift */; };
 		86C30536235BCD5A00FF902B /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C30535235BCD5A00FF902B /* UserLogin.swift */; };
@@ -43,6 +44,7 @@
 		4F95140E235BABDB005D251B /* ProjectLog.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ProjectLog.md; sourceTree = "<group>"; };
 		4F95140F235BBF12005D251B /* Plant+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+Convenience.swift"; sourceTree = "<group>"; };
 		4F951414235E2C86005D251B /* MyPlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantTableViewCell.swift; sourceTree = "<group>"; };
+		4FCFB2432360B8650009304C /* CountdownHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownHelper.swift; sourceTree = "<group>"; };
 		866B07ED235ABAC800EBD691 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86BB1856235F7DEB00C5B2BC /* Plant 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Plant 2.xcdatamodel"; sourceTree = "<group>"; };
 		86BB1857235F7F0600C5B2BC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				9EBD0397235FD592009D0612 /* NotificationHandler.swift */,
+				4FCFB2432360B8650009304C /* CountdownHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				9EE38999235BB224009C02B1 /* PlantSearchTableViewCell.swift in Sources */,
 				9EBD0398235FD592009D0612 /* NotificationHandler.swift in Sources */,
 				86BB1858235F7F0600C5B2BC /* CoreDataStack.swift in Sources */,
+				4FCFB2442360B8650009304C /* CountdownHelper.swift in Sources */,
 				9EE38990235BB0FF009C02B1 /* MyPlantsTableViewController.swift in Sources */,
 				9EE389A2235BB64E009C02B1 /* PlantRepresentation.swift in Sources */,
 				86C30536235BCD5A00FF902B /* UserLogin.swift in Sources */,

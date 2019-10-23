@@ -29,30 +29,12 @@ class CreatePlantViewController: UIViewController {
     
         // Do any additional setup after loading the view.
     }
-        lazy private var countdownPickerData: [[String]] = {
-            // Create string arrays using numbers wrapped in string values: ["0", "1", ... "60"]
-            let minutes: [String] = Array(0...60).map { String($0) }
-            let seconds: [String] = Array(0...59).map { String($0) }
-            // "min" and "sec" are the unit labels
-            let data: [[String]] = [minutes, ["min"], seconds, ["sec"]]
-            return data
-        }()
-    
-        var dateFormatter: DateFormatter {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "HH:mm:ss.SS"
-            formatter.timeZone = TimeZone(secondsFromGMT: 0)
-            return formatter
-        }
-    
-        var duration: TimeInterval {
-            let minuteString = waterIntervalDatePicker.selectedRow(inComponent: 0)
-            let secondString = countdownPicker.selectedRow(inComponent: 2)
-            let minutes = Int(minuteString)
-            let seconds = Int(secondString)
-            let totalSeconds = TimeInterval(minutes * 60 + seconds)
-            return totalSeconds
-        }
+
+    var countDownDuration: TimeInterval {
+        let h2oFrequency = waterIntervalDatePicker.countDownDuration
+        return h2oFrequency
+    }
+  
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         
@@ -67,7 +49,7 @@ class CreatePlantViewController: UIViewController {
                 // update plant here
             
             } else {
-                plantController?.createPlant(with: nil, species: plantSpecies, nickName: plantNickname, h2oFrequency: h2oFrequency, image: nil, userID: nil, context: CoreDataStack.shared.mainContext)
+                plantController?.createPlant(with: plantSpecies, nickName: plantNickname, h2oFrequency: h2oFrequency, image: nil, userID: nil, context: CoreDataStack.shared.mainContext)
             }
             
         }
@@ -95,7 +77,7 @@ class CreatePlantViewController: UIViewController {
         return
     }
 
-        plantController?.createPlant(with: nil, species: species, nickName: nickName, h2oFrequency: h2oFrequency, image: nil, userID: nil)
+        plantController?.createPlant(with: species, nickName: nickName, h2oFrequency: h2oFrequency, image: nil, userID: nil)
     }
 
     /*
