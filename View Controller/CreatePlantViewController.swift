@@ -34,25 +34,7 @@ class CreatePlantViewController: UIViewController {
         let h2oFrequency = waterIntervalDatePicker.countDownDuration
         return h2oFrequency
     }
-    let startDate = Date()
-    let endDate = Date(timeInterval: h2oFrequency, since: startDate)
-    let outputString = formatter.string(from: startDate, to: endDate)
-
-
-    
-//    let formatterStyle = DateIntervalFormatter() {
-//        .dateStyle = .short
-//        formatterStyle.timeStyle = .none
-//let startDate = Date()
-//        let endDate = Date(timeInterval: 86400, since: startDate)
-//
-//
-/
-//
-//        // Use the configured formatter to generate the string.
-
-//        }
-        
+  
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         
@@ -67,7 +49,7 @@ class CreatePlantViewController: UIViewController {
                 // update plant here
             
             } else {
-                plantController?.createPlant(with: nil, species: plantSpecies, nickName: plantNickname, h2oFrequency: h2oFrequency, image: nil, userID: nil, context: CoreDataStack.shared.mainContext)
+                plantController?.createPlant(with: plantSpecies, nickName: plantNickname, h2oFrequency: h2oFrequency, image: nil, userID: nil, context: CoreDataStack.shared.mainContext)
             }
             
         }
@@ -95,7 +77,7 @@ class CreatePlantViewController: UIViewController {
         return
     }
 
-        plantController?.createPlant(with: nil, species: species, nickName: nickName, h2oFrequency: h2oFrequency, image: nil, userID: nil)
+        plantController?.createPlant(with: species, nickName: nickName, h2oFrequency: h2oFrequency, image: nil, userID: nil)
     }
 
     /*

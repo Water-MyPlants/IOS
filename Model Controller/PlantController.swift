@@ -148,16 +148,17 @@ class PlantController{
        }
 
     // MARK: Create Plant
-    func createPlant(with id: String?, species: String?, nickName: String?, h2oFrequency: Double?, image: String?, userID: String?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    func createPlant(with species: String?, nickName: String?, h2oFrequency: Double?, image: String?, userID: String?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         guard let species = species,
         let nickName = nickName,
         let h2oFrequency = h2oFrequency
             else { return }
            context.performAndWait {
-           
-            let plant = Plant(id: id, nickName: nickName, species: species, image: nil, h2oFrequency: h2oFrequency, userID: nil)
-//            let onePlant = PlantRepresentation(id: id, nickName: nickName, species: species, h2oFrequency: h2oFrequency, userID: nil, image: nil)
+            let number = Int.random(in: 0...1_000_000).description
+            let plant = Plant(id: number, nickName: nickName, species: species, image: nil, h2oFrequency: h2oFrequency, userID: nil)
             
+            NotificationHelper.scheduleNotification(at: h2oFrequency, for: plant)
+      
                do {
                    try CoreDataStack.shared.save(context: context)
                } catch {
