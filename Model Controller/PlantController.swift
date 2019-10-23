@@ -91,7 +91,7 @@ class PlantController{
     // MARK: updatePlants
     func updatePlants(with representations: [PlantRepresentation], context: NSManagedObjectContext) {
     // Which representations do we already have in Core Data?
-        let identifiersToFetch = representations.map({ $0.id })
+        let identifiersToFetch = representations.compactMap({ $0.id })
     // [UUID: EntryRepresentation]
     let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, representations))
     // Make a mutable copy of the dictionary above
@@ -105,7 +105,7 @@ class PlantController{
         // Update the ones we do have
         for plant in existingPlants {
             // Grab the EntryRepresentation that corresponds to this Entry
-                let identifier = plant.id
+                let identifier = plant.id ?? ""
             guard let representation = representationsByID[identifier],
                 let ID = representation.id,
             let h2oFrequency = representation.h2oFrequency else { continue }
@@ -156,10 +156,8 @@ class PlantController{
            context.performAndWait {
            
             let plant = Plant(id: id, nickName: nickName, species: species, image: nil, h2oFrequency: h2oFrequency, userID: nil)
-            let onePlant = PlantRepresentation(id: id, nickName: nickName, species: species, h2oFrequency: h2oFrequency, userID: nil, image: nil)
-            plants.append(onePlant)
-               print(print)
-               
+//            let onePlant = PlantRepresentation(id: id, nickName: nickName, species: species, h2oFrequency: h2oFrequency, userID: nil, image: nil)
+            
                do {
                    try CoreDataStack.shared.save(context: context)
                } catch {
@@ -242,9 +240,10 @@ class PlantController{
     
     // MARK: PUT func
     func put(plant: Plant, completion: @escaping(Error?) -> Void = { _ in }) {
-        let identifier = plant.id
+        let number = Int.random(in: 0...1_000_000)
+        let identifier = plant.id ?? "\(number)"
         let requestURL = firebaseURL
-        .appendingPathComponent("\(identifier)")
+        .appendingPathComponent(identifier)
         .appendingPathExtension("json")
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.put.rawValue
