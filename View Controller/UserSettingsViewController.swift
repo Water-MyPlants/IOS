@@ -44,7 +44,7 @@ class UserSettingsViewController: UIViewController {
                         self.updateButton.isEnabled = false
                         return
                     }
-                    print("sign up complete")
+                    print("Update Complete")
                     self.dismiss(animated: true, completion: nil)
                 }
 

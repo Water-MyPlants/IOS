@@ -42,8 +42,7 @@ class LoginViewController: UIViewController {
             }
             
             DispatchQueue.main.async {
-                if (self.plantController.bearer != nil) {
-                    self.dismiss(animated: true, completion: nil)
+                if (self.plantController.bearer != nil) {         
                     print("Login successful")
                 } else {
                     print("Can't login")
