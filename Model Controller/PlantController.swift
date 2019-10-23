@@ -317,8 +317,9 @@ class PlantController{
 // MARK: Signup
 extension PlantController {
     func signUp(username: String, password: String, phoneNumber: Int, id: Int?, completion: @escaping (NetworkError?) -> Void) {
-        
-        let newUser = User(username: username, phoneNumber: phoneNumber, password: password, id: nil)
+        let number = Int.random(in: 0...1_000_000)
+        let id = number
+        let newUser = User(username: username, phoneNumber: phoneNumber, password: password, id: id)
         let signUpURL = baseURL.appendingPathComponent("api/user/register")
         var request = URLRequest(url: signUpURL)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -406,14 +407,23 @@ extension PlantController {
 //               print("Error saving data: \(error)")
 //           }
 //       }
+    
+    // MARK: Update User
+    
        func updateUser(password: String, phoneNumber: Int, id: Int?, completion: @escaping (NetworkError?) -> Void) {
+        guard let id = id,
+            let bearer = bearer else {
+                NSLog("Error getting ID/Bearer")
+                return
+        }
+        
            var currentUser = User(phoneNumber: phoneNumber, password: password, id: id)
            // local update
     currentUser.id = id
         currentUser.phoneNumber = phoneNumber
         currentUser.password = password
-        var updateJson = ["password": "\(password)", "phoneNumber": "\(phoneNumber)"]
-        let updateURL = baseURL.appendingPathComponent("api/user/\(currentUser.id)")
+        let updateJson = ["password": "\(password)", "phoneNumber": "\(phoneNumber)"]
+        let updateURL = baseURL.appendingPathComponent("api/user/\(id)")
            var request = URLRequest(url: updateURL)
            request.httpMethod = HTTPMethod.put.rawValue
            request.setValue("application/json", forHTTPHeaderField: "Content-Type")

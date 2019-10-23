@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     let plantController = PlantController()
     
@@ -21,11 +21,23 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        usernameTextField.delegate = self
+        phoneNumberTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
+        
         
         // Do any additional setup after loading the view.
     }
-    
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == confirmPasswordTextField {
+            validatePassword()
+        }
+    }
     
     /*
      // MARK: - Navigation
@@ -44,24 +56,21 @@ class RegisterViewController: UIViewController {
 
     }
 func validatePassword() {
-                    
-        var errorMsg = "Passwords do not match "
-        var password = passwordTextField.text
-        var confirmPassword = confirmPasswordTextField.text
+          // To Do: textField.isEmpty logic
+        let errorMsg = "Passwords do not match "
+        
         
         if passwordTextField.text == confirmPasswordTextField.text {
                 self.createButton.isEnabled = true
         } else {
-            var isPasswordValid: Bool {
-                    if password != confirmPassword {
+            
+                   
                         let alertController = UIAlertController(title: "Password Error", message: errorMsg, preferredStyle: .alert)
                         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                         alertController.addAction(defaultAction)
                         self.present(alertController, animated: true, completion: nil)
-                    } else {
-                }
-                    return true
-            }
+                 
+            
         }
     }
     
@@ -93,7 +102,7 @@ func validatePassword() {
                     return
                 }
                 print("sign up complete")
-                self.dismiss(animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: true)
             }
 
         }

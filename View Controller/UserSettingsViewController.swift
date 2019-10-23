@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class UserSettingsViewController: UIViewController {
+class UserSettingsViewController: UIViewController, UITextFieldDelegate {
     
     var plantController: PlantController?
     
@@ -19,14 +19,45 @@ class UserSettingsViewController: UIViewController {
     @IBOutlet weak var updateButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        updatePhoneNumberTextField.delegate = self
+        updatePasswordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
         // Do any additional setup after loading the view.
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == confirmPasswordTextField {
+            validatePassword()
+        }
+    }
     @IBAction func updateButtonTapped(_ sender: Any) {
+       print("update button tapped")
+        updateButton.isEnabled = true
+        updateUser()
         
 }
-       func updateUser() {
+       func validatePassword() {
+             // To Do: textField.isEmpty logic
+           let errorMsg = "Passwords do not match "
+           
+           
+           if updatePasswordTextField.text == confirmPasswordTextField.text {
+                   self.updateButton.isEnabled = true
+           } else {
+               
+                      
+                           let alertController = UIAlertController(title: "Password Error", message: errorMsg, preferredStyle: .alert)
+                           let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                           alertController.addAction(defaultAction)
+                           self.present(alertController, animated: true, completion: nil)
+                    
+               
+           }
+       }
+    func updateUser() {
             guard let phoneNumber = updatePhoneNumberTextField.text,
                 let password = updatePasswordTextField.text,
                 let confirmPassword = confirmPasswordTextField.text,
@@ -36,7 +67,12 @@ class UserSettingsViewController: UIViewController {
                     updateButton.isEnabled = true
                     return
             }
+            updateButton.isEnabled = false
+            if !confirmPassword.isEmpty {
+                updateButton.isEnabled = true
+                validatePassword()
             
+            }
             plantController?.updateUser(password: password, phoneNumber: Int(phoneNumber) ?? 0, id: nil) { (error) in
                 DispatchQueue.main.async {
                     if let error = error {
@@ -45,7 +81,6 @@ class UserSettingsViewController: UIViewController {
                         return
                     }
                     print("Update Complete")
-                    self.dismiss(animated: true, completion: nil)
                 }
 
             }
