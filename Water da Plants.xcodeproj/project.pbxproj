@@ -45,6 +45,7 @@
 		9EE3899C235BB44B009C02B1 /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3899B235BB44B009C02B1 /* UserRepresentation.swift */; };
 		9EE3899F235BB4FA009C02B1 /* WaterDaPlants.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3899D235BB4FA009C02B1 /* WaterDaPlants.xcdatamodeld */; };
 		9EE389A2235BB64E009C02B1 /* PlantRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE389A1235BB64E009C02B1 /* PlantRepresentation.swift */; };
+		B45A9BA0B30A8007B677039D /* Pods_Water_da_Plants.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928969CB5369D5965565A254 /* Pods_Water_da_Plants.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,8 @@
 		4FCFB2692362383C0009304C /* README_EULA.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = README_EULA.html; sourceTree = "<group>"; };
 		4FCFB26A2362383C0009304C /* Targa MS Hand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Targa MS Hand.ttf"; sourceTree = "<group>"; };
 		4FCFB26B2362383C0009304C /* Targa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Targa.ttf; sourceTree = "<group>"; };
+		64A288A490FBF08143477F89 /* Pods-Water da Plants.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Water da Plants.release.xcconfig"; path = "Target Support Files/Pods-Water da Plants/Pods-Water da Plants.release.xcconfig"; sourceTree = "<group>"; };
+		7E0D479073EDC11D48805A6E /* Pods-Water da Plants.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Water da Plants.debug.xcconfig"; path = "Target Support Files/Pods-Water da Plants/Pods-Water da Plants.debug.xcconfig"; sourceTree = "<group>"; };
 		866B07ED235ABAC800EBD691 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86BB1856235F7DEB00C5B2BC /* Plant 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Plant 2.xcdatamodel"; sourceTree = "<group>"; };
 		86BB1857235F7F0600C5B2BC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -77,6 +80,7 @@
 		86C30537235BCE3D00FF902B /* PlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantController.swift; sourceTree = "<group>"; };
 		86C30540235BDE8800FF902B /* plants.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = plants.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		86F7E529235E6B9D0082333D /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
+		928969CB5369D5965565A254 /* Pods_Water_da_Plants.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Water_da_Plants.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBD0397235FD592009D0612 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		9EBD039923611F54009D0612 /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
 		9EE38987235BB032009C02B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View Controller/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -97,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B45A9BA0B30A8007B677039D /* Pods_Water_da_Plants.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +135,8 @@
 				4F9513F9235A8CD3005D251B /* Water da Plants */,
 				4F9513F8235A8CD3005D251B /* Products */,
 				866B07ED235ABAC800EBD691 /* Assets.xcassets */,
+				8C44D0F5F935B939E9855AC0 /* Pods */,
+				E23CD0335821F4E147BE05DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,6 +178,15 @@
 				86C30537235BCE3D00FF902B /* PlantController.swift */,
 			);
 			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		8C44D0F5F935B939E9855AC0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E0D479073EDC11D48805A6E /* Pods-Water da Plants.debug.xcconfig */,
+				64A288A490FBF08143477F89 /* Pods-Water da Plants.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		9EBD0396235FD56B009D0612 /* Helpers */ = {
@@ -222,6 +238,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E23CD0335821F4E147BE05DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				928969CB5369D5965565A254 /* Pods_Water_da_Plants.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -229,9 +253,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F95140B235A8CD8005D251B /* Build configuration list for PBXNativeTarget "Water da Plants" */;
 			buildPhases = (
+				3A4016578A8C2E889D775524 /* [CP] Check Pods Manifest.lock */,
 				4F9513F3235A8CD3005D251B /* Sources */,
 				4F9513F4235A8CD3005D251B /* Frameworks */,
 				4F9513F5235A8CD3005D251B /* Resources */,
+				9EBD039B23624A6B009D0612 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -299,6 +325,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A4016578A8C2E889D775524 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Water da Plants-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EBD039B23624A6B009D0612 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4F9513F3235A8CD3005D251B /* Sources */ = {
@@ -469,6 +537,7 @@
 		};
 		4F95140C235A8CD8005D251B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E0D479073EDC11D48805A6E /* Pods-Water da Plants.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -487,6 +556,7 @@
 		};
 		4F95140D235A8CD8005D251B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64A288A490FBF08143477F89 /* Pods-Water da Plants.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -99,7 +99,7 @@ class PlantController{
     // Make a mutable copy of the dictionary above
     var plantsToCreate = representationsByID
     do {
-        let context = CoreDataStack.shared.mainContext
+        let context = CoreDataStack.shared.container.newBackgroundContext()
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
         // Only fetch the tasks with the identifiers that are in this identifier
         fetchRequest.predicate = NSPredicate(format: "identifier IN %@", identifiersToFetch)
@@ -155,7 +155,8 @@ class PlantController{
         let nickName = nickName,
         let h2oFrequency = h2oFrequency
             else { return }
-           context.performAndWait {
+        let moc = CoreDataStack.shared.container.newBackgroundContext()
+           moc.performAndWait {
             let number = Int.random(in: 0...1_000_000).description
             let plant = Plant(id: number, nickName: nickName, species: species, image: nil, h2oFrequency: h2oFrequency, userID: nil)
             

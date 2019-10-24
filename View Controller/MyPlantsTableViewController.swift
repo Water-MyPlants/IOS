@@ -93,20 +93,12 @@ class MyPlantsTableViewController: UITableViewController, PlantControllerPresent
             tableView.endUpdates()
         }
 
-//        func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
-//            let sectionIndexSet = IndexSet(integer: sectionIndex)
-//
-//            switch type {
-//            case .insert:
-//                tableView.insertSections(sectionIndexSet, with: .fade)
-//            case .delete:
-//                tableView.deleteSections(sectionIndexSet, with: .fade)
-//            default:
-//                break
-//            }
-//        }
 
-        func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                        didChange anObject: Any,
+                        at indexPath: IndexPath?,
+                        for type: NSFetchedResultsChangeType,
+                        newIndexPath: IndexPath?) {
             switch type {
             case .delete:
                 guard let indexPath = indexPath else { return }
