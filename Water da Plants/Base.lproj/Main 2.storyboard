@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pSD-h7-VrA">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Create Plant-->
+        <scene sceneID="jJb-U3-zgo">
+            <objects>
+                <viewController title="Create Plant" id="zlg-as-rWK" customClass="CreatePlantViewController" customModule="Water_da_Plants" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HRd-mj-2DO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Plant Nickname" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PsZ-LD-ANH">
+                                <rect key="frame" x="0.0" y="138" width="414" height="55"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your watering interval" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJ3-43-yN5">
+                                <rect key="frame" x="0.0" y="394" width="414" height="46.5"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="43200" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39Y-k9-QM0">
+                                <rect key="frame" x="20" y="464" width="374" height="216"/>
+                            </datePicker>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rS1-Cv-wWM">
+                                <rect key="frame" x="20" y="203" width="374" height="183"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Plant Species" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZPx-Dx-nHY">
+                                <rect key="frame" x="0.0" y="54" width="414" height="55"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j60-Gr-ljA">
+                                <rect key="frame" x="2" y="701" width="410" height="39"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="17"/>
+                                <state key="normal" title="Save Plant"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="zlg-as-rWK" eventType="touchUpInside" id="wy6-8Y-vsG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9Y-da-7wJ">
+                                <rect key="frame" x="2" y="737" width="410" height="39"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="17"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="zlg-as-rWK" eventType="touchUpInside" id="LEE-8W-0ot"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="j60-Gr-ljA" firstAttribute="leading" secondItem="sb7-Ii-lGv" secondAttribute="leading" constant="2" id="0vE-xw-GVz"/>
+                            <constraint firstItem="39Y-k9-QM0" firstAttribute="top" secondItem="oJ3-43-yN5" secondAttribute="bottom" constant="23.5" id="2Xy-0x-nY4"/>
+                            <constraint firstItem="sb7-Ii-lGv" firstAttribute="trailing" secondItem="j60-Gr-ljA" secondAttribute="trailing" constant="2" id="8fF-Rs-DPw"/>
+                            <constraint firstItem="rS1-Cv-wWM" firstAttribute="leading" secondItem="sb7-Ii-lGv" secondAttribute="leading" constant="20" id="9n9-vs-mGn"/>
+                            <constraint firstItem="rS1-Cv-wWM" firstAttribute="top" secondItem="PsZ-LD-ANH" secondAttribute="bottom" constant="10" id="AnP-6a-CzG"/>
+                            <constraint firstItem="j60-Gr-ljA" firstAttribute="leading" secondItem="sb7-Ii-lGv" secondAttribute="leading" constant="2" id="AxB-Am-H0Y"/>
+                            <constraint firstItem="oJ3-43-yN5" firstAttribute="leading" secondItem="sb7-Ii-lGv" secondAttribute="leading" id="KBC-3c-7Cg"/>
+                            <constraint firstItem="oJ3-43-yN5" firstAttribute="trailing" secondItem="sb7-Ii-lGv" secondAttribute="trailing" id="LPp-7i-OPH"/>
+                            <constraint firstItem="O9Y-da-7wJ" firstAttribute="leading" secondItem="sb7-Ii-lGv" secondAttribute="leading" constant="2" id="RYw-kA-fV8"/>
+                            <constraint firstItem="sb7-Ii-lGv" firstAttribute="bottom" secondItem="O9Y-da-7wJ" secondAttribute="bottom" constant="32" id="VOT-Vq-OSy"/>
+                            <constraint firstItem="j60-Gr-ljA" firstAttribute="top" secondItem="39Y-k9-QM0" secondAttribute="bottom" constant="21" id="XNI-KF-F6g"/>
+                            <constraint firstItem="PsZ-LD-ANH" firstAttribute="top" secondItem="ZPx-Dx-nHY" secondAttribute="bottom" constant="29" id="bAh-GT-liR"/>
+                            <constraint firstItem="PsZ-LD-ANH" firstAttribute="leading" secondItem="sb7-Ii-lGv" secondAttribute="leading" id="bOg-FU-t9h"/>
+                            <constraint firstItem="ZPx-Dx-nHY" firstAttribute="top" secondItem="sb7-Ii-lGv" secondAttribute="top" constant="54" id="e5u-gh-bG2"/>
+                            <constraint firstItem="PsZ-LD-ANH" firstAttribute="trailing" secondItem="sb7-Ii-lGv" secondAttribute="trailing" id="h1x-4N-b21"/>
+                            <constraint firstItem="sb7-Ii-lGv" firstAttribute="trailing" secondItem="39Y-k9-QM0" secondAttribute="trailing" constant="20" id="joD-2W-tNT"/>
+                            <constraint firstItem="sb7-Ii-lGv" firstAttribute="bottom" secondItem="j60-Gr-ljA" secondAttribute="bottom" constant="68" id="mUW-oL-qew"/>
+                            <constraint firstItem="39Y-k9-QM0" firstAttribute="leading" secondItem="sb7-Ii-lGv" secondAttribute="leading" constant="20" id="pZA-Dm-rOY"/>
+                            <constraint firstItem="ZPx-Dx-nHY" firstAttribute="trailing" secondItem="sb7-Ii-lGv" secondAttribute="trailing" id="suj-nH-zgo"/>
+                            <constraint firstItem="sb7-Ii-lGv" firstAttribute="trailing" secondItem="rS1-Cv-wWM" secondAttribute="trailing" constant="20" id="u3Y-Ym-afu"/>
+                            <constraint firstItem="sb7-Ii-lGv" firstAttribute="trailing" secondItem="O9Y-da-7wJ" secondAttribute="trailing" constant="2" id="vUH-QI-SNN"/>
+                            <constraint firstItem="sb7-Ii-lGv" firstAttribute="trailing" secondItem="j60-Gr-ljA" secondAttribute="trailing" constant="2" id="vwb-VT-UQL"/>
+                            <constraint firstItem="oJ3-43-yN5" firstAttribute="top" secondItem="rS1-Cv-wWM" secondAttribute="bottom" constant="8" id="wye-LE-lVD"/>
+                            <constraint firstItem="ZPx-Dx-nHY" firstAttribute="leading" secondItem="sb7-Ii-lGv" secondAttribute="leading" id="yx4-gF-EVv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sb7-Ii-lGv"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Create Plant" image="pencil" catalog="system" selectedImage="pencil" id="1L3-gw-9ey"/>
+                    <navigationItem key="navigationItem" title="Title" id="FcG-um-f4t"/>
+                    <connections>
+                        <outlet property="cancelButton" destination="O9Y-da-7wJ" id="Zgg-M3-rg9"/>
+                        <outlet property="plantNickNameTextField" destination="PsZ-LD-ANH" id="gi5-ee-m9K"/>
+                        <outlet property="plantPicImageView" destination="rS1-Cv-wWM" id="jSe-eF-l88"/>
+                        <outlet property="plantSpeciesTextField" destination="ZPx-Dx-nHY" id="E5W-KP-6RT"/>
+                        <outlet property="savePlantButton" destination="j60-Gr-ljA" id="6FP-9C-mkU"/>
+                        <outlet property="waterIntervalDatePicker" destination="39Y-k9-QM0" id="gHg-Zw-Hgl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m3s-7o-Wyl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4607" y="-815"/>
+        </scene>
+        <!--Plant Detail View-->
+        <scene sceneID="klo-aa-RMu">
+            <objects>
+                <viewController title="Plant Detail View" id="PNf-Z3-I9t" customClass="MyPlantDetailViewController" customModule="Water_da_Plants" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KCB-tM-auB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UWQ-e5-QZf">
+                                <rect key="frame" x="0.0" y="110" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Species Name" id="jak-r2-Yrh" userLabel="Species Name"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Until Next Watering" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jg-mi-Rdw">
+                                <rect key="frame" x="0.0" y="290" width="414" height="39"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIJ-su-alI" userLabel="Nickname">
+                                <rect key="frame" x="0.0" y="227" width="414" height="55"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evie-s-w1JE5duY62M-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="Dn6-uk-zI7">
+                                <rect key="frame" x="15" y="420" width="384" height="353"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="353" id="f4B-DI-UG0"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="UWQ-e5-QZf" firstAttribute="trailing" secondItem="hIJ-su-alI" secondAttribute="trailing" id="1zj-nA-9Y2"/>
+                            <constraint firstItem="hIJ-su-alI" firstAttribute="trailing" secondItem="1Jg-mi-Rdw" secondAttribute="trailing" id="84X-p7-F61"/>
+                            <constraint firstItem="1Jg-mi-Rdw" firstAttribute="top" secondItem="hIJ-su-alI" secondAttribute="bottom" constant="8" id="9sh-sU-XhH"/>
+                            <constraint firstItem="Dn6-uk-zI7" firstAttribute="top" secondItem="1Jg-mi-Rdw" secondAttribute="bottom" constant="91" id="A3J-Je-uAk"/>
+                            <constraint firstItem="UWQ-e5-QZf" firstAttribute="top" secondItem="pQc-qH-d4J" secondAttribute="top" constant="22" id="ANp-wb-MHZ"/>
+                            <constraint firstItem="UWQ-e5-QZf" firstAttribute="centerX" secondItem="KCB-tM-auB" secondAttribute="centerX" id="JYS-j1-qZL"/>
+                            <constraint firstItem="hIJ-su-alI" firstAttribute="leading" secondItem="1Jg-mi-Rdw" secondAttribute="leading" id="NLB-Rf-1Nr"/>
+                            <constraint firstItem="1Jg-mi-Rdw" firstAttribute="centerX" secondItem="Dn6-uk-zI7" secondAttribute="centerX" id="aZd-Xk-g3Y"/>
+                            <constraint firstItem="Dn6-uk-zI7" firstAttribute="leading" secondItem="pQc-qH-d4J" secondAttribute="leading" constant="15" id="baQ-ax-9TK"/>
+                            <constraint firstItem="UWQ-e5-QZf" firstAttribute="leading" secondItem="pQc-qH-d4J" secondAttribute="leading" id="eKm-dg-Lj4"/>
+                            <constraint firstItem="UWQ-e5-QZf" firstAttribute="leading" secondItem="hIJ-su-alI" secondAttribute="leading" id="fRD-eD-Kri"/>
+                            <constraint firstItem="pQc-qH-d4J" firstAttribute="bottom" secondItem="Dn6-uk-zI7" secondAttribute="bottom" constant="40" id="oEO-ut-3tM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pQc-qH-d4J"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mxt-Cr-JFh"/>
+                    <connections>
+                        <outlet property="nickName" destination="hIJ-su-alI" id="Wbl-CB-kab"/>
+                        <outlet property="plantPictureImageView" destination="Dn6-uk-zI7" id="oCV-ik-xh2"/>
+                        <outlet property="speciesTitle" destination="jak-r2-Yrh" id="2B2-Tg-lh0"/>
+                        <outlet property="timeUntilNextWateringLabel" destination="1Jg-mi-Rdw" id="WZw-Yb-Hdd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ltu-5l-15f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4606" y="-142"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="sG9-Ml-MRE">
+            <objects>
+                <viewController id="u5y-gs-BSE" customClass="UserSettingsViewController" customModule="Water_da_Plants" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TE5-kB-vNg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mWv-5m-uWr">
+                                <rect key="frame" x="19" y="182" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3YX-Bo-eIC">
+                                <rect key="frame" x="20" y="294" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teh-pY-gCB">
+                                <rect key="frame" x="20" y="265" width="138" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4du-eZ-Fuj">
+                                <rect key="frame" x="19" y="153" width="176" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhR-HV-UE1">
+                                <rect key="frame" x="181" y="433" width="51" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="updateButtonTapped:" destination="u5y-gs-BSE" eventType="touchUpInside" id="7JV-tD-ldt"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HPn-oC-Ckr">
+                                <rect key="frame" x="19" y="391" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confirm password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dg-9M-J6A">
+                                <rect key="frame" x="19" y="362" width="140" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="CDB-Cb-463"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="0VN-A4-xCr"/>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="HPn-oC-Ckr" id="xBp-7S-SoI"/>
+                        <outlet property="updateButton" destination="dhR-HV-UE1" id="fFE-3K-hWj"/>
+                        <outlet property="updatePasswordTextField" destination="3YX-Bo-eIC" id="bOD-Lh-Kjn"/>
+                        <outlet property="updatePhoneNumberTextField" destination="mWv-5m-uWr" id="Zw8-VW-x5l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lcm-py-mpD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2656.521739130435" y="640.84821428571422"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="ngA-o2-Wuy">
+            <objects>
+                <viewController id="Hl8-z0-2la" customClass="RegisterViewController" customModule="Water_da_Plants" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ctg-mY-7To">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vYU-dL-ofA">
+                                <rect key="frame" x="40" y="164" width="334" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" smartDashesType="yes"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kXk-p6-4nG">
+                                <rect key="frame" x="40" y="281" width="334" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next" smartDashesType="yes" textContentType="tel"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create your username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tur-pr-GYZ">
+                                <rect key="frame" x="40" y="135" width="170" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFX-WQ-frn">
+                                <rect key="frame" x="40" y="252" width="157" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Pi-aH-4f4">
+                                <rect key="frame" x="40" y="401" width="334" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" smartDashesType="yes"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cI5-4p-cbl">
+                                <rect key="frame" x="40" y="372" width="119" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HQ-aI-OUk">
+                                <rect key="frame" x="184" y="608" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Create"/>
+                                <connections>
+                                    <action selector="createButtonTapped:" destination="Hl8-z0-2la" eventType="touchUpInside" id="XzV-vW-9lc"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fMf-HP-VOH">
+                                <rect key="frame" x="40" y="494" width="334" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" smartDashesType="yes"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confirm password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ih-cD-NxO">
+                                <rect key="frame" x="40" y="465" width="140" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="BU8-D9-yCn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hly-G0-ATh"/>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="fMf-HP-VOH" id="RDY-bt-8Xi"/>
+                        <outlet property="createButton" destination="4HQ-aI-OUk" id="bZf-8V-eJa"/>
+                        <outlet property="passwordTextField" destination="7Pi-aH-4f4" id="xe1-x1-M3D"/>
+                        <outlet property="phoneNumberTextField" destination="kXk-p6-4nG" id="DRK-N0-LGy"/>
+                        <outlet property="usernameTextField" destination="vYU-dL-ofA" id="7g6-nP-wHh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fmq-9y-1hK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="848" y="418"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="cBN-SR-IBR">
+            <objects>
+                <viewController id="e0M-IZ-9MO" customClass="LoginViewController" customModule="Water_da_Plants" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6UJ-mN-UrZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgK-kc-Ss1">
+                                <rect key="frame" x="188" y="519" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="e0M-IZ-9MO" eventType="touchUpInside" id="hFn-42-Ejl"/>
+                                    <segue destination="9Gk-VY-ItH" kind="presentation" identifier="LoginSegue" modalPresentationStyle="fullScreen" id="yOo-vO-cOk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cC-XK-OG3">
+                                <rect key="frame" x="179" y="599" width="57" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="registerButtonTapped:" destination="pSm-d9-M3k" eventType="touchUpInside" id="3T7-Qp-ZIb"/>
+                                    <segue destination="Hl8-z0-2la" kind="show" id="qSN-jX-V3q"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHt-0U-ta8">
+                                <rect key="frame" x="20" y="296" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hxw-mx-VUH">
+                                <rect key="frame" x="20" y="389" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vg-Vj-IVI">
+                                <rect key="frame" x="20" y="267" width="79" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qg-BU-RnB">
+                                <rect key="frame" x="20" y="360" width="74" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="1bt-65-ZIj">
+                                <rect key="frame" x="87" y="108" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="qq0-6j-GHG"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2ga-Bp-zt0"/>
+                    <connections>
+                        <outlet property="loginButton" destination="sgK-kc-Ss1" id="Nxd-yA-eYv"/>
+                        <outlet property="passwordTextField" destination="hxw-mx-VUH" id="M0x-1I-PuV"/>
+                        <outlet property="usernameTextField" destination="gHt-0U-ta8" id="JmH-Bs-bLq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J8S-z4-CWC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="pSm-d9-M3k" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="849" y="-350"/>
+        </scene>
+        <!--Home Screen Tab Bar Controller-->
+        <scene sceneID="Vsk-2w-NNU">
+            <objects>
+                <tabBarController id="9Gk-VY-ItH" customClass="HomeScreenTabBarController" customModule="Water_da_Plants" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="1Ue-qj-6cY"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xyu-iB-tHC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="u5y-gs-BSE" kind="relationship" relationship="viewControllers" id="f2r-ye-e6m"/>
+                        <segue destination="2nA-o0-EOi" kind="relationship" relationship="viewControllers" id="XOC-e6-b2u"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2L9-9J-MON" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1877" y="-350"/>
+        </scene>
+        <!--My Plants Table View Controller-->
+        <scene sceneID="2AO-XT-6Iz">
+            <objects>
+                <tableViewController id="ukW-W2-IXY" userLabel="My Plants Table View Controller" customClass="MyPlantsTableViewController" customModule="Water_da_Plants" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QTz-Ht-BPZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MyPlantCell" textLabel="cfD-pl-Np0" detailTextLabel="gEb-on-n1f" style="IBUITableViewCellStyleSubtitle" id="FAh-yl-RZv" customClass="MyPlantTableViewCell" customModule="Water_da_Plants" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FAh-yl-RZv" id="7EW-VO-GjO" customClass="MyPlantTableViewCell" customModule="Water_da_Plants" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="382.5" height="55.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cfD-pl-Np0" userLabel="Nickname">
+                                            <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gEb-on-n1f" userLabel="Species">
+                                            <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nickNameLabel" destination="cfD-pl-Np0" id="uac-bf-Qe6"/>
+                                    <outlet property="speciesLabel" destination="gEb-on-n1f" id="Tyz-ge-MqT"/>
+                                    <segue destination="PNf-Z3-I9t" kind="show" identifier="PlantDetailViewSegue" id="xin-O1-CqN"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ukW-W2-IXY" id="6yo-wD-nOV"/>
+                            <outlet property="delegate" destination="ukW-W2-IXY" id="F3X-Fy-ACd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Plants" id="xl6-ws-ffn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BEp-r6-HTy">
+                            <connections>
+                                <segue destination="zlg-as-rWK" kind="presentation" identifier="CreatePlantSegue" id="Qnk-Hd-bTg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HzD-dO-JVh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3566.666666666667" y="-159.375"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="bpf-Mf-7Ei">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pSD-h7-VrA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="sS6-o2-eVp"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZJm-HE-Oqq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="e0M-IZ-9MO" kind="relationship" relationship="rootViewController" id="Aaf-OL-d1B"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vVD-xo-Vfr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="19" y="-350"/>
+        </scene>
+        <!--My Plants-->
+        <scene sceneID="McE-bB-N1Z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2nA-o0-EOi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Plants" image="house" catalog="system" id="kTP-Cq-JJX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oyq-wi-Xdk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ukW-W2-IXY" kind="relationship" relationship="rootViewController" id="u4z-de-1ZB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mVb-W9-BK5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2656.521739130435" y="-159.375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo" width="1005" height="1005"/>
+        <image name="evie-s-w1JE5duY62M-unsplash" width="2092" height="2801"/>
+        <image name="gear" catalog="system" width="64" height="60"/>
+        <image name="house" catalog="system" width="64" height="54"/>
+        <image name="pencil" catalog="system" width="64" height="58"/>
+    </resources>
+</document>
