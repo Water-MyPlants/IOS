@@ -34,7 +34,7 @@ class UserSettingsViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBAction func updateButtonTapped(_ sender: Any) {
-       print("update button tapped")
+      
         updateButton.isEnabled = false
         updateUser()
 }
@@ -73,7 +73,7 @@ class UserSettingsViewController: UIViewController, UITextFieldDelegate {
                 validatePassword()
             
             }
-            plantController?.updateUser(password: password, phoneNumber: Int(phoneNumber) ?? 0, id: nil) { (error) in
+            plantController?.updateUser(password: password, phoneNumber: Int64(phoneNumber) ?? 0, id: nil) { (error) in
                 DispatchQueue.main.async {
                     if let error = error {
                         NSLog("Error signing up: \(error)")

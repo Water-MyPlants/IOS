@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct User: Codable{
+struct UserRepresentation: Codable{
     var username: String?
-    var phoneNumber: Int?
+    var phoneNumber: Int64?
     var password: String?
-    var id: Int?
+    var id: String?
 }

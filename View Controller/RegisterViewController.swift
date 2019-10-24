@@ -94,7 +94,7 @@ func validatePassword() {
         
         }
         
-        plantController.signUp(username: userName, password: password, phoneNumber: Int(phoneNumber) ?? 0, id: nil) { (error) in
+        plantController.signUp(username: userName, password: password, phoneNumber: Int64(phoneNumber) ?? 0, id: nil) { (error) in
             DispatchQueue.main.async {
                 if let error = error {
                     NSLog("Error signing up: \(error)")

@@ -10,6 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 
+
 enum HTTPMethod: String{
     case get = "GET"
     case put = "PUT"
@@ -31,7 +32,7 @@ enum NetworkError: Error {
 
 class PlantController{
     
-    var currentUser : User?
+    var currentUser : UserRepresentation?
     var bearer: Bearer?
 
     
@@ -316,10 +317,10 @@ class PlantController{
 
 // MARK: Signup
 extension PlantController {
-    func signUp(username: String, password: String, phoneNumber: Int, id: Int?, completion: @escaping (NetworkError?) -> Void) {
-        let number = Int.random(in: 0...1_000_000)
+    func signUp(username: String, password: String, phoneNumber: Int64, id: String?, completion: @escaping (NetworkError?) -> Void) {
+        let number = Int.random(in: 0...1_000_000).description
         let id = number
-        let newUser = User(username: username, phoneNumber: phoneNumber, password: password, id: id)
+        let newUser = UserRepresentation(username: username, phoneNumber: phoneNumber, password: password, id: id)
         let signUpURL = baseURL.appendingPathComponent("api/user/register")
         var request = URLRequest(url: signUpURL)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -410,14 +411,14 @@ extension PlantController {
     
     // MARK: Update User
     
-       func updateUser(password: String, phoneNumber: Int, id: Int?, completion: @escaping (NetworkError?) -> Void) {
+    func updateUser(password: String, phoneNumber: Int64, id: String?, context: NSManagedContext, completion: @escaping (NetworkError?) -> Void) {
         guard let id = id,
             let bearer = bearer else {
                 NSLog("Error getting ID/Bearer")
                 return
         }
         
-           var currentUser = User(phoneNumber: phoneNumber, password: password, id: id)
+           var currentUser = UserRepresentation(phoneNumber: phoneNumber, password: password, id: id)
            // local update
     currentUser.id = id
         currentUser.phoneNumber = phoneNumber
