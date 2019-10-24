@@ -63,7 +63,7 @@ class Countdown {
         stopDate = Date(timeIntervalSinceNow: duration)
         DispatchQueue.main.async {
             
-            self.timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
             self.state = .started
         }
     }

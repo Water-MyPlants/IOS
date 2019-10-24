@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F30824E23623BE2000062F6 /* quick_tips.html in Resources */ = {isa = PBXBuildFile; fileRef = 4F30824723623BE1000062F6 /* quick_tips.html */; };
+		4F30824F23623BE2000062F6 /* AshaSS.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F30824823623BE1000062F6 /* AshaSS.txt */; };
+		4F30825023623BE2000062F6 /* ffonts.net.htm in Resources */ = {isa = PBXBuildFile; fileRef = 4F30824923623BE1000062F6 /* ffonts.net.htm */; };
+		4F30825123623BE2000062F6 /* ffonts.net.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F30824A23623BE1000062F6 /* ffonts.net.txt */; };
+		4F30825223623BE2000062F6 /* Asha.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F30824B23623BE1000062F6 /* Asha.ttf */; };
+		4F30825323623BE2000062F6 /* AshaOutline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F30824C23623BE1000062F6 /* AshaOutline.ttf */; };
+		4F30825423623BE2000062F6 /* install-a-new-font.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F30824D23623BE1000062F6 /* install-a-new-font.txt */; };
 		4F9513FB235A8CD3005D251B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9513FA235A8CD3005D251B /* AppDelegate.swift */; };
 		4F9513FD235A8CD3005D251B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9513FC235A8CD3005D251B /* SceneDelegate.swift */; };
 		4F951402235A8CD3005D251B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F951400235A8CD3005D251B /* Main.storyboard */; };
@@ -41,6 +48,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F30824723623BE1000062F6 /* quick_tips.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = quick_tips.html; sourceTree = "<group>"; };
+		4F30824823623BE1000062F6 /* AshaSS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AshaSS.txt; sourceTree = "<group>"; };
+		4F30824923623BE1000062F6 /* ffonts.net.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ffonts.net.htm; sourceTree = "<group>"; };
+		4F30824A23623BE1000062F6 /* ffonts.net.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ffonts.net.txt; sourceTree = "<group>"; };
+		4F30824B23623BE1000062F6 /* Asha.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Asha.ttf; sourceTree = "<group>"; };
+		4F30824C23623BE1000062F6 /* AshaOutline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AshaOutline.ttf; sourceTree = "<group>"; };
+		4F30824D23623BE1000062F6 /* install-a-new-font.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "install-a-new-font.txt"; sourceTree = "<group>"; };
 		4F9513F7235A8CD3005D251B /* Water da Plants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Water da Plants.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9513FA235A8CD3005D251B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F9513FC235A8CD3005D251B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,9 +103,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F30824623623BE1000062F6 /* Asha */ = {
+			isa = PBXGroup;
+			children = (
+				4F30824723623BE1000062F6 /* quick_tips.html */,
+				4F30824823623BE1000062F6 /* AshaSS.txt */,
+				4F30824923623BE1000062F6 /* ffonts.net.htm */,
+				4F30824A23623BE1000062F6 /* ffonts.net.txt */,
+				4F30824B23623BE1000062F6 /* Asha.ttf */,
+				4F30824C23623BE1000062F6 /* AshaOutline.ttf */,
+				4F30824D23623BE1000062F6 /* install-a-new-font.txt */,
+			);
+			path = Asha;
+			sourceTree = "<group>";
+		};
 		4F9513EE235A8CD3005D251B = {
 			isa = PBXGroup;
 			children = (
+				4F30824623623BE1000062F6 /* Asha */,
 				4FCFB2672362383C0009304C /* targa */,
 				9EBD0396235FD56B009D0612 /* Helpers */,
 				86C30539235BCE4100FF902B /* Model Controller */,
@@ -252,11 +281,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				86C30541235BDE8800FF902B /* plants.json in Resources */,
+				4F30825123623BE2000062F6 /* ffonts.net.txt in Resources */,
+				4F30825323623BE2000062F6 /* AshaOutline.ttf in Resources */,
+				4F30825223623BE2000062F6 /* Asha.ttf in Resources */,
+				4F30825023623BE2000062F6 /* ffonts.net.htm in Resources */,
+				4F30825423623BE2000062F6 /* install-a-new-font.txt in Resources */,
 				4F951407235A8CD8005D251B /* LaunchScreen.storyboard in Resources */,
 				866B07EE235ABAC800EBD691 /* Assets.xcassets in Resources */,
+				4F30824F23623BE2000062F6 /* AshaSS.txt in Resources */,
 				4FCFB26C2362383D0009304C /* Targa MS.ttf in Resources */,
 				4FCFB26F2362383D0009304C /* Targa.ttf in Resources */,
 				4FCFB26E2362383D0009304C /* Targa MS Hand.ttf in Resources */,
+				4F30824E23623BE2000062F6 /* quick_tips.html in Resources */,
 				4F951402235A8CD3005D251B /* Main.storyboard in Resources */,
 				4FCFB26D2362383D0009304C /* README_EULA.html in Resources */,
 			);
