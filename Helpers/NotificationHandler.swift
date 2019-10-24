@@ -47,8 +47,8 @@ struct NotificationHelper {
         let content = UNMutableNotificationContent()
         
         content.title = "Time to water the \(plantName)"
-        content.subtitle = "This is the subtitle"
-        content.body = "This is the body"
+        content.subtitle = "She's Thirsty!"
+        content.body = "GO GO GO"
         content.sound = UNNotificationSound.default
         
         // Trigger

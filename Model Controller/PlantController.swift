@@ -163,7 +163,7 @@ class PlantController{
                do {
                    try CoreDataStack.shared.save(context: context)
                } catch {
-                   NSLog("Error saving context when creating new course: \(error)")
+                   NSLog("Error saving context when creating new plant: \(error)")
                }
             
             put(plant: plant)
@@ -409,9 +409,43 @@ extension PlantController {
 //           }
 //       }
     
+// MARK: Create User Locally
+    func createUserLocally(with username: String?, phoneNumber: Int64?, password: String?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        guard let username = username,
+        let phoneNumber = phoneNumber,
+        let password = password
+            else { return }
+           context.performAndWait {
+            let number = Int.random(in: 0...1_000_000).description
+            let id = number.description
+            let user = User(username: username, phoneNumber: phoneNumber, password: password, id: id)
+      
+               do {
+                   try CoreDataStack.shared.save(context: context)
+               } catch {
+                   NSLog("Error saving context when creating new user: \(error)")
+               }
+        }
+    }
+// MARK: Update User Locally
+//    func updateUserLocally(with phoneNumber: Int64?, password: String?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+//        guard let phoneNumber = phoneNumber,
+//        let password = password
+//            else { return }
+//           context.performAndWait {
+//            let number = Int.random(in: 0...1_000_000).description
+//            let id = number.description
+//            let user = User(username: nil, phoneNumber: phoneNumber, password: password, id: id)
+//
+//               do {
+//                   try CoreDataStack.shared.save(context: context)
+//               } catch {
+//                   NSLog("Error saving context when creating new user: \(error)")
+//               }
+//        }
+//    }
     // MARK: Update User
-    
-    func updateUser(password: String, phoneNumber: Int64, id: String?, context: NSManagedContext, completion: @escaping (NetworkError?) -> Void) {
+    func updateUser(password: String, phoneNumber: Int64, id: String?, completion: @escaping (NetworkError?) -> Void) {
         guard let id = id,
             let bearer = bearer else {
                 NSLog("Error getting ID/Bearer")
