@@ -9,14 +9,26 @@
 import UIKit
 
 class HomeScreenTabBarController: UITabBarController {
-
+    
+    var plantController: PlantController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+passPlantControllerToChildren()
         // Do any additional setup after loading the view.
     }
     
-
+    func passPlantControllerToChildren() {
+        for childVC in children {
+            if let childVC = childVC as? PlantControllerPresenting {
+                childVC.plantController = plantController
+            } else if let navController = childVC as? UINavigationController {
+                guard let grandChildVC = navController.children.first as? PlantControllerPresenting else { continue }
+                grandChildVC.plantController = plantController
+                
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

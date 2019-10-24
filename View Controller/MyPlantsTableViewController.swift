@@ -9,9 +9,10 @@
 import UIKit
 import CoreData
 
-class MyPlantsTableViewController: UITableViewController {
+class MyPlantsTableViewController: UITableViewController, PlantControllerPresenting {
 
-    let plantController = PlantController()
+    var plantController: PlantController?
+
     
     lazy var fetchedResultsController: NSFetchedResultsController<Plant> = {
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
@@ -31,7 +32,7 @@ class MyPlantsTableViewController: UITableViewController {
 
     
     @objc func beginRefresh() {
-        plantController.fetchPlantsFromServer { 
+        plantController?.fetchPlantsFromServer {
             DispatchQueue.main.async {
                 self.tableView.refreshControl?.endRefreshing()
             }
@@ -77,7 +78,7 @@ class MyPlantsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             if editingStyle == .delete {
                 let plant = fetchedResultsController.object(at: indexPath)
-                plantController.deletePlant(plant: plant)
+                plantController?.deletePlant(plant: plant)
             }
         }
     }

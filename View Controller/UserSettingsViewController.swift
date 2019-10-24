@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class UserSettingsViewController: UIViewController, UITextFieldDelegate {
+class UserSettingsViewController: UIViewController, UITextFieldDelegate, PlantControllerPresenting {
     
     var plantController: PlantController?
     
@@ -17,6 +17,7 @@ class UserSettingsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var updatePasswordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var updateButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updatePhoneNumberTextField.delegate = self
@@ -73,7 +74,7 @@ class UserSettingsViewController: UIViewController, UITextFieldDelegate {
                 validatePassword()
             
             }
-            plantController?.updateUser(password: password, phoneNumber: Int64(phoneNumber) ?? 0, id: nil) { (error) in
+            plantController?.updateUser(password: password, phoneNumber: Int64(phoneNumber) ?? 0) { (error) in
                 DispatchQueue.main.async {
                     if let error = error {
                         NSLog("Error signing up: \(error)")
@@ -89,15 +90,14 @@ class UserSettingsViewController: UIViewController, UITextFieldDelegate {
 
 
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+   // }
+    
 
 
 

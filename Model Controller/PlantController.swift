@@ -32,7 +32,8 @@ enum NetworkError: Error {
 
 class PlantController{
     
-    var currentUser : UserRepresentation?
+    var currentUserRepresentation : UserRepresentation?
+    var currentUser: User?
     var bearer: Bearer?
 
     
@@ -345,6 +346,7 @@ extension PlantController {
                 NSLog("User wasn't completed: \(response.statusCode)")
                 completion(.noUser)
             }
+            self.createUserLocally(with: username, phoneNumber: phoneNumber, password: password)
             completion(nil)
             }.resume()
     }
@@ -395,20 +397,12 @@ extension PlantController {
                  NSLog("User wasn't completed: \(response.statusCode)")
                 completion(.noLogin)
              }
+            self.fetchCurrentUserLocally(username: username, password: password)
              completion(nil)
             print("Login successful")
              }.resume()
        }
-//       private func saveLocalUser() {
-//           guard let url = self.userLocalURL else{ return }
-//           do{
-//               let data = try PropertyListEncoder().encode(currentUser)
-//               try data.write(to: url)
-//           }catch{
-//               print("Error saving data: \(error)")
-//           }
-//       }
-    
+
 // MARK: Create User Locally
     func createUserLocally(with username: String?, phoneNumber: Int64?, password: String?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         guard let username = username,
@@ -427,44 +421,63 @@ extension PlantController {
                }
         }
     }
-// MARK: Update User Locally
-//    func updateUserLocally(with phoneNumber: Int64?, password: String?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-//        guard let phoneNumber = phoneNumber,
-//        let password = password
-//            else { return }
-//           context.performAndWait {
-//            let number = Int.random(in: 0...1_000_000).description
-//            let id = number.description
-//            let user = User(username: nil, phoneNumber: phoneNumber, password: password, id: id)
-//
-//               do {
-//                   try CoreDataStack.shared.save(context: context)
-//               } catch {
-//                   NSLog("Error saving context when creating new user: \(error)")
-//               }
-//        }
-//    }
+    // MARK: Fetch Current User Locally
+    
+    func fetchCurrentUserLocally(username: String, password: String) {
+        let predicate = NSPredicate(format: "username == %@ AND password == %@", username, password)
+            let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+            fetchRequest.predicate = predicate
+
+        var user: User?
+
+        CoreDataStack.shared.mainContext.performAndWait {
+                do {
+                    user = try CoreDataStack.shared.mainContext.fetch(fetchRequest).first
+                } catch {
+                    NSLog("Error fetching user")
+                }
+            }
+        self.currentUser = user
+        }
+    
+ // MARK: Update User Locally
+    func updateUserLocally(with phoneNumber: Int64?, password: String?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        guard let phoneNumber = phoneNumber,
+        let password = password,
+        let currentUser = currentUser
+            else { return }
+           context.performAndWait {
+            currentUser.phoneNumber = phoneNumber
+            currentUser.password = password
+               do {
+                   try CoreDataStack.shared.save(context: context)
+               } catch {
+                   NSLog("Error saving context when creating new user: \(error)")
+               }
+        }
+    }
     // MARK: Update User
-    func updateUser(password: String, phoneNumber: Int64, id: String?, completion: @escaping (NetworkError?) -> Void) {
-        guard let id = id,
+    func updateUser(password: String, phoneNumber: Int64, completion: @escaping (NetworkError?) -> Void) {
+        guard let user = currentUser,
+            let id = user.id,
             let bearer = bearer else {
                 NSLog("Error getting ID/Bearer")
                 return
         }
         
-           var currentUser = UserRepresentation(phoneNumber: phoneNumber, password: password, id: id)
+           var currentUserRepresentation = UserRepresentation(phoneNumber: phoneNumber, password: password, id: id)
            // local update
-    currentUser.id = id
-        currentUser.phoneNumber = phoneNumber
-        currentUser.password = password
+        currentUserRepresentation.id = id
+        currentUserRepresentation.phoneNumber = phoneNumber
+        currentUserRepresentation.password = password
         let updateJson = ["password": "\(password)", "phoneNumber": "\(phoneNumber)"]
         let updateURL = baseURL.appendingPathComponent("api/user/\(id)")
            var request = URLRequest(url: updateURL)
            request.httpMethod = HTTPMethod.put.rawValue
            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-           request.addValue("\(bearer)", forHTTPHeaderField: "Authorization")
+        request.addValue(bearer.token, forHTTPHeaderField: "Authorization")
            do {
-               print(currentUser)
+               print(currentUserRepresentation)
                let userData = try JSONEncoder().encode(updateJson)
                request.httpBody = userData
            } catch {

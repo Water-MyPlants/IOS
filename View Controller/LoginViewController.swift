@@ -52,15 +52,20 @@ class LoginViewController: UIViewController {
         })
     }
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
+        if segue.identifier == "LoginSegue" {
+            if let tabBarVC = segue.destination as? HomeScreenTabBarController {
+                tabBarVC.plantController = plantController
+            }
+        }
      // Pass the selected object to the new view controller.
      }
-     */
+     
+    
     @IBAction func loginButtonTapped(_ sender: Any) {
         loginButton.isEnabled = false
         login()
