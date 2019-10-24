@@ -24,6 +24,7 @@ class MyPlantDetailViewController: UIViewController {
     
     @IBOutlet weak var timeUntilNextWateringLabel: UILabel!
     
+    @IBOutlet weak var speciesLabel: UILabel!
     @IBOutlet weak var plantNickNameLabelTest: UILabel!
     
     var countdown = Countdown()
@@ -44,7 +45,8 @@ class MyPlantDetailViewController: UIViewController {
     
     func updateViews() {
         guard let plant = self.plant else { return }
-        speciesTitle.title = plant.species
+        speciesLabel.text
+            = plant.species
         nickName.text = plant.nickName
         NotificationHelper.getTimeRemainingForPlant(for: plant) { (timeRemaining) in
             guard let timeRemaining = timeRemaining else { return }

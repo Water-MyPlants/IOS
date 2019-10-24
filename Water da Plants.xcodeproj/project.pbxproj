@@ -15,6 +15,10 @@
 		4F951415235E2C86005D251B /* MyPlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F951414235E2C86005D251B /* MyPlantTableViewCell.swift */; };
 		4FCFB2442360B8650009304C /* CountdownHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCFB2432360B8650009304C /* CountdownHelper.swift */; };
 		4FCFB26623620CA20009304C /* PlantControllerPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCFB26523620CA20009304C /* PlantControllerPresenting.swift */; };
+		4FCFB26C2362383D0009304C /* Targa MS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FCFB2682362383C0009304C /* Targa MS.ttf */; };
+		4FCFB26D2362383D0009304C /* README_EULA.html in Resources */ = {isa = PBXBuildFile; fileRef = 4FCFB2692362383C0009304C /* README_EULA.html */; };
+		4FCFB26E2362383D0009304C /* Targa MS Hand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FCFB26A2362383C0009304C /* Targa MS Hand.ttf */; };
+		4FCFB26F2362383D0009304C /* Targa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FCFB26B2362383C0009304C /* Targa.ttf */; };
 		866B07EE235ABAC800EBD691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 866B07ED235ABAC800EBD691 /* Assets.xcassets */; };
 		86BB1858235F7F0600C5B2BC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB1857235F7F0600C5B2BC /* CoreDataStack.swift */; };
 		86C30536235BCD5A00FF902B /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C30535235BCD5A00FF902B /* UserLogin.swift */; };
@@ -48,6 +52,10 @@
 		4F951414235E2C86005D251B /* MyPlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantTableViewCell.swift; sourceTree = "<group>"; };
 		4FCFB2432360B8650009304C /* CountdownHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownHelper.swift; sourceTree = "<group>"; };
 		4FCFB26523620CA20009304C /* PlantControllerPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantControllerPresenting.swift; sourceTree = "<group>"; };
+		4FCFB2682362383C0009304C /* Targa MS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Targa MS.ttf"; sourceTree = "<group>"; };
+		4FCFB2692362383C0009304C /* README_EULA.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = README_EULA.html; sourceTree = "<group>"; };
+		4FCFB26A2362383C0009304C /* Targa MS Hand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Targa MS Hand.ttf"; sourceTree = "<group>"; };
+		4FCFB26B2362383C0009304C /* Targa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Targa.ttf; sourceTree = "<group>"; };
 		866B07ED235ABAC800EBD691 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86BB1856235F7DEB00C5B2BC /* Plant 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Plant 2.xcdatamodel"; sourceTree = "<group>"; };
 		86BB1857235F7F0600C5B2BC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -84,6 +92,7 @@
 		4F9513EE235A8CD3005D251B = {
 			isa = PBXGroup;
 			children = (
+				4FCFB2672362383C0009304C /* targa */,
 				9EBD0396235FD56B009D0612 /* Helpers */,
 				86C30539235BCE4100FF902B /* Model Controller */,
 				9EE3899A235BB43C009C02B1 /* Model */,
@@ -114,6 +123,17 @@
 				4F95140E235BABDB005D251B /* ProjectLog.md */,
 			);
 			path = "Water da Plants";
+			sourceTree = "<group>";
+		};
+		4FCFB2672362383C0009304C /* targa */ = {
+			isa = PBXGroup;
+			children = (
+				4FCFB2682362383C0009304C /* Targa MS.ttf */,
+				4FCFB2692362383C0009304C /* README_EULA.html */,
+				4FCFB26A2362383C0009304C /* Targa MS Hand.ttf */,
+				4FCFB26B2362383C0009304C /* Targa.ttf */,
+			);
+			path = targa;
 			sourceTree = "<group>";
 		};
 		86C30539235BCE4100FF902B /* Model Controller */ = {
@@ -234,7 +254,11 @@
 				86C30541235BDE8800FF902B /* plants.json in Resources */,
 				4F951407235A8CD8005D251B /* LaunchScreen.storyboard in Resources */,
 				866B07EE235ABAC800EBD691 /* Assets.xcassets in Resources */,
+				4FCFB26C2362383D0009304C /* Targa MS.ttf in Resources */,
+				4FCFB26F2362383D0009304C /* Targa.ttf in Resources */,
+				4FCFB26E2362383D0009304C /* Targa MS Hand.ttf in Resources */,
 				4F951402235A8CD3005D251B /* Main.storyboard in Resources */,
+				4FCFB26D2362383D0009304C /* README_EULA.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
