@@ -33,14 +33,14 @@ class CreatePlantViewController: UIViewController, UITextFieldDelegate {
     
         // Do any additional setup after loading the view.
     }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.resignFirstResponder()
-        return true
-    }
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        textField.resignFirstResponder()
+//        return true
+//    }
     var countDownDuration: TimeInterval {
         let h2oFrequency = waterIntervalDatePicker.countDownDuration
         return h2oFrequency
