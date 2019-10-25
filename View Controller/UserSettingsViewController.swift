@@ -74,7 +74,7 @@ class UserSettingsViewController: UIViewController, UITextFieldDelegate, PlantCo
                 validatePassword()
             
             }
-            plantController?.updateUser(password: password, phoneNumber: Int64(phoneNumber) ?? 0) { (error) in
+            plantController?.updateUser(password: password, phoneNumber: phoneNumber) { (error) in
                 DispatchQueue.main.async {
                     if let error = error {
                         NSLog("Error signing up: \(error)")

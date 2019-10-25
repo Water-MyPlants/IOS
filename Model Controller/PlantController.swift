@@ -319,10 +319,8 @@ class PlantController{
 
 // MARK: Signup
 extension PlantController {
-    func signUp(username: String, password: String, phoneNumber: Int64, id: String?, completion: @escaping (NetworkError?) -> Void) {
-        let number = Int.random(in: 0...1_000_000).description
-        let id = number
-        let newUser = UserRepresentation(username: username, phoneNumber: phoneNumber, password: password, id: id)
+    func signUp(username: String, password: String, phoneNumber: String, id: String?, completion: @escaping (NetworkError?) -> Void) {
+        let newUser = UserRepresentation(username: username, phoneNumber: phoneNumber, password: password, id: nil)
         let signUpURL = baseURL.appendingPathComponent("api/user/register")
         var request = URLRequest(url: signUpURL)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -347,8 +345,20 @@ extension PlantController {
                 NSLog("User wasn't completed: \(response.statusCode)")
                 completion(.noUser)
             }
-            self.createUserLocally(with: username, phoneNumber: phoneNumber, password: password)
-            completion(nil)
+            guard let data = data else {return}
+            
+            do {
+                
+                let decodedUser = try JSONDecoder().decode(UserRepresentation.self, from: data)
+                if let id = decodedUser.id{
+                self.createUserLocally(with: username, phoneNumber: phoneNumber, password: password, id: id)
+                }
+                
+                completion(nil)
+            } catch {
+                NSLog("Error decoding user representation: \(error)")
+            }
+           
             }.resume()
     }
     
@@ -405,15 +415,10 @@ extension PlantController {
        }
 
 // MARK: Create User Locally
-    func createUserLocally(with username: String?, phoneNumber: Int64?, password: String?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-        guard let username = username,
-        let phoneNumber = phoneNumber,
-        let password = password
-            else { return }
+    func createUserLocally(with username: String, phoneNumber: String, password: String, id: Int, context: NSManagedObjectContext = CoreDataStack.shared.mainContext){
            context.performAndWait {
-            let number = Int.random(in: 0...1_000_000).description
-            let id = number.description
-            let user = User(username: username, phoneNumber: phoneNumber, password: password, id: id)
+          
+             _ = User(username: username, phoneNumber: Int64(phoneNumber) ?? 0, password: password, id: String(id))
       
                do {
                    try CoreDataStack.shared.save(context: context)
@@ -458,20 +463,19 @@ extension PlantController {
         }
     }
     // MARK: Update User
-    func updateUser(password: String, phoneNumber: Int64, completion: @escaping (NetworkError?) -> Void) {
+    func updateUser(password: String, phoneNumber: String, completion: @escaping (NetworkError?) -> Void) {
         guard let user = currentUser,
+            let userName = user.username,
             let id = user.id,
             let bearer = bearer else {
                 NSLog("Error getting ID/Bearer")
                 return
         }
         
-           var currentUserRepresentation = UserRepresentation(phoneNumber: phoneNumber, password: password, id: id)
+           var currentUserRepresentation = UserRepresentation(phoneNumber: phoneNumber, password: password, id: Int(id))
+    
            // local update
-        currentUserRepresentation.id = id
-        currentUserRepresentation.phoneNumber = phoneNumber
-        currentUserRepresentation.password = password
-        let updateJson = ["password": "\(password)", "phoneNumber": "\(phoneNumber)"]
+        let updateJson = ["password": "\(password)", "phoneNumber": "\(phoneNumber)", "username": userName]
         let updateURL = baseURL.appendingPathComponent("api/user/\(id)")
            var request = URLRequest(url: updateURL)
            request.httpMethod = HTTPMethod.put.rawValue

@@ -34,6 +34,8 @@
 		86F7E52A235E6B9D0082333D /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F7E529235E6B9D0082333D /* Bearer.swift */; };
 		9EBD0398235FD592009D0612 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBD0397235FD592009D0612 /* NotificationHandler.swift */; };
 		9EBD039A23611F54009D0612 /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBD039923611F54009D0612 /* User+Convenience.swift */; };
+		9EBD03B123627A6A009D0612 /* Water_da_Plants_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBD03B023627A6A009D0612 /* Water_da_Plants_Tests.swift */; };
+		9EBD03BF23627ECC009D0612 /* Water_da_PlantsUI_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBD03BE23627ECC009D0612 /* Water_da_PlantsUI_Tests.swift */; };
 		9EE38988235BB032009C02B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE38987235BB032009C02B1 /* LoginViewController.swift */; };
 		9EE3898A235BB053009C02B1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE38989235BB053009C02B1 /* RegisterViewController.swift */; };
 		9EE3898C235BB0A9009C02B1 /* HomeScreenTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3898B235BB0A9009C02B1 /* HomeScreenTabBarController.swift */; };
@@ -47,6 +49,23 @@
 		9EE389A2235BB64E009C02B1 /* PlantRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE389A1235BB64E009C02B1 /* PlantRepresentation.swift */; };
 		B45A9BA0B30A8007B677039D /* Pods_Water_da_Plants.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928969CB5369D5965565A254 /* Pods_Water_da_Plants.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9EBD03B323627A6A009D0612 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F9513EF235A8CD3005D251B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F9513F6235A8CD3005D251B;
+			remoteInfo = "Water da Plants";
+		};
+		9EBD03C123627ECC009D0612 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F9513EF235A8CD3005D251B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F9513F6235A8CD3005D251B;
+			remoteInfo = "Water da Plants";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4F30824723623BE1000062F6 /* quick_tips.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = quick_tips.html; sourceTree = "<group>"; };
@@ -83,6 +102,12 @@
 		928969CB5369D5965565A254 /* Pods_Water_da_Plants.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Water_da_Plants.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBD0397235FD592009D0612 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		9EBD039923611F54009D0612 /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
+		9EBD03AE23627A6A009D0612 /* Water da Plants Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Water da Plants Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EBD03B023627A6A009D0612 /* Water_da_Plants_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Water_da_Plants_Tests.swift; sourceTree = "<group>"; };
+		9EBD03B223627A6A009D0612 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EBD03BC23627ECC009D0612 /* Water da PlantsUI Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Water da PlantsUI Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EBD03BE23627ECC009D0612 /* Water_da_PlantsUI_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Water_da_PlantsUI_Tests.swift; sourceTree = "<group>"; };
+		9EBD03C023627ECC009D0612 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EE38987235BB032009C02B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View Controller/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 		9EE38989235BB053009C02B1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = "View Controller/RegisterViewController.swift"; sourceTree = SOURCE_ROOT; };
 		9EE3898B235BB0A9009C02B1 /* HomeScreenTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTabBarController.swift; sourceTree = "<group>"; };
@@ -102,6 +127,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				B45A9BA0B30A8007B677039D /* Pods_Water_da_Plants.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EBD03AB23627A6A009D0612 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EBD03B923627ECC009D0612 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +172,8 @@
 				9EE38997235BB1F2009C02B1 /* Table View Cell */,
 				9EE38986235BAFF1009C02B1 /* View Controller */,
 				4F9513F9235A8CD3005D251B /* Water da Plants */,
+				9EBD03AF23627A6A009D0612 /* Water da Plants Tests */,
+				9EBD03BD23627ECC009D0612 /* Water da PlantsUI Tests */,
 				4F9513F8235A8CD3005D251B /* Products */,
 				866B07ED235ABAC800EBD691 /* Assets.xcassets */,
 				8C44D0F5F935B939E9855AC0 /* Pods */,
@@ -144,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				4F9513F7235A8CD3005D251B /* Water da Plants.app */,
+				9EBD03AE23627A6A009D0612 /* Water da Plants Tests.xctest */,
+				9EBD03BC23627ECC009D0612 /* Water da PlantsUI Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,6 +240,24 @@
 				4FCFB26523620CA20009304C /* PlantControllerPresenting.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9EBD03AF23627A6A009D0612 /* Water da Plants Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9EBD03B023627A6A009D0612 /* Water_da_Plants_Tests.swift */,
+				9EBD03B223627A6A009D0612 /* Info.plist */,
+			);
+			path = "Water da Plants Tests";
+			sourceTree = "<group>";
+		};
+		9EBD03BD23627ECC009D0612 /* Water da PlantsUI Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9EBD03BE23627ECC009D0612 /* Water_da_PlantsUI_Tests.swift */,
+				9EBD03C023627ECC009D0612 /* Info.plist */,
+			);
+			path = "Water da PlantsUI Tests";
 			sourceTree = "<group>";
 		};
 		9EE38986235BAFF1009C02B1 /* View Controller */ = {
@@ -268,18 +329,62 @@
 			productReference = 4F9513F7235A8CD3005D251B /* Water da Plants.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9EBD03AD23627A6A009D0612 /* Water da Plants Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9EBD03B723627A6A009D0612 /* Build configuration list for PBXNativeTarget "Water da Plants Tests" */;
+			buildPhases = (
+				9EBD03AA23627A6A009D0612 /* Sources */,
+				9EBD03AB23627A6A009D0612 /* Frameworks */,
+				9EBD03AC23627A6A009D0612 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9EBD03B423627A6A009D0612 /* PBXTargetDependency */,
+			);
+			name = "Water da Plants Tests";
+			productName = "Water da Plants Tests";
+			productReference = 9EBD03AE23627A6A009D0612 /* Water da Plants Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9EBD03BB23627ECC009D0612 /* Water da PlantsUI Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9EBD03C323627ECC009D0612 /* Build configuration list for PBXNativeTarget "Water da PlantsUI Tests" */;
+			buildPhases = (
+				9EBD03B823627ECC009D0612 /* Sources */,
+				9EBD03B923627ECC009D0612 /* Frameworks */,
+				9EBD03BA23627ECC009D0612 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9EBD03C223627ECC009D0612 /* PBXTargetDependency */,
+			);
+			name = "Water da PlantsUI Tests";
+			productName = "Water da PlantsUI Tests";
+			productReference = 9EBD03BC23627ECC009D0612 /* Water da PlantsUI Tests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		4F9513EF235A8CD3005D251B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
+				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Jonalynn Masters";
 				TargetAttributes = {
 					4F9513F6235A8CD3005D251B = {
 						CreatedOnToolsVersion = 11.0;
+					};
+					9EBD03AD23627A6A009D0612 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 4F9513F6235A8CD3005D251B;
+					};
+					9EBD03BB23627ECC009D0612 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 4F9513F6235A8CD3005D251B;
 					};
 				};
 			};
@@ -297,6 +402,8 @@
 			projectRoot = "";
 			targets = (
 				4F9513F6235A8CD3005D251B /* Water da Plants */,
+				9EBD03AD23627A6A009D0612 /* Water da Plants Tests */,
+				9EBD03BB23627ECC009D0612 /* Water da PlantsUI Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -321,6 +428,20 @@
 				4F30824E23623BE2000062F6 /* quick_tips.html in Resources */,
 				4F951402235A8CD3005D251B /* Main.storyboard in Resources */,
 				4FCFB26D2362383D0009304C /* README_EULA.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EBD03AC23627A6A009D0612 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EBD03BA23627ECC009D0612 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +520,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9EBD03AA23627A6A009D0612 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EBD03B123627A6A009D0612 /* Water_da_Plants_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EBD03B823627ECC009D0612 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EBD03BF23627ECC009D0612 /* Water_da_PlantsUI_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9EBD03B423627A6A009D0612 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F9513F6235A8CD3005D251B /* Water da Plants */;
+			targetProxy = 9EBD03B323627A6A009D0612 /* PBXContainerItemProxy */;
+		};
+		9EBD03C223627ECC009D0612 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F9513F6235A8CD3005D251B /* Water da Plants */;
+			targetProxy = 9EBD03C123627ECC009D0612 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4F951400235A8CD3005D251B /* Main.storyboard */ = {
@@ -573,6 +723,84 @@
 			};
 			name = Release;
 		};
+		9EBD03B523627A6A009D0612 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Water da Plants Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Lambda.Water-da-Plants-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Water da Plants.app/Water da Plants";
+			};
+			name = Debug;
+		};
+		9EBD03B623627A6A009D0612 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Water da Plants Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Lambda.Water-da-Plants-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Water da Plants.app/Water da Plants";
+			};
+			name = Release;
+		};
+		9EBD03C423627ECC009D0612 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Water da PlantsUI Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Lambda.Water-da-PlantsUI-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Water da Plants";
+			};
+			name = Debug;
+		};
+		9EBD03C523627ECC009D0612 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Water da PlantsUI Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Lambda.Water-da-PlantsUI-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Water da Plants";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -590,6 +818,24 @@
 			buildConfigurations = (
 				4F95140C235A8CD8005D251B /* Debug */,
 				4F95140D235A8CD8005D251B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9EBD03B723627A6A009D0612 /* Build configuration list for PBXNativeTarget "Water da Plants Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9EBD03B523627A6A009D0612 /* Debug */,
+				9EBD03B623627A6A009D0612 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9EBD03C323627ECC009D0612 /* Build configuration list for PBXNativeTarget "Water da PlantsUI Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9EBD03C423627ECC009D0612 /* Debug */,
+				9EBD03C523627ECC009D0612 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

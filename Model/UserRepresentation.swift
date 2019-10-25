@@ -10,7 +10,7 @@ import Foundation
 
 struct UserRepresentation: Codable{
     var username: String?
-    var phoneNumber: Int64?
+    var phoneNumber: String?
     var password: String?
-    var id: String?
+    var id: Int?
 }

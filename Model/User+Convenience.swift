@@ -24,13 +24,14 @@ extension User {
     @discardableResult convenience init?(userRepresentation: UserRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         guard let username = userRepresentation.username,
             let phoneNumber = userRepresentation.phoneNumber,
+            let phoneNumberInt = Int64(phoneNumber),
             let password = userRepresentation.password,
             let id = userRepresentation.id else { return nil }
-        self.init(username: username, phoneNumber: phoneNumber, password: password, id: id, context: context)
+        self.init(username: username, phoneNumber: phoneNumberInt, password: password, id: id.description, context: context)
     }
     
     var userRepresentation: UserRepresentation {
-        return UserRepresentation(username: username, phoneNumber: phoneNumber, password: password, id: id)
+        return UserRepresentation(username: username, phoneNumber: phoneNumber.description, password: password, id: Int(id ?? "") ?? -1)
         
     }
 }
