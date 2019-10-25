@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     let plantController = PlantController()
     @IBOutlet weak var usernameTextField: UITextField!
@@ -19,10 +19,19 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.usernameTextField.delegate = self
+        self.passwordTextField.delegate = self
         NotificationHelper.requestLocalNotificationPermissions()
     }
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
+        return true
+    }
     
     
     private func login() {

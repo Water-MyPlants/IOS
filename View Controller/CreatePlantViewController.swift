@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreatePlantViewController: UIViewController {
+class CreatePlantViewController: UIViewController, UITextFieldDelegate {
     
     var plantController: PlantController?
     var plants: [PlantRepresentation] = []
@@ -24,8 +24,12 @@ class CreatePlantViewController: UIViewController {
     @IBOutlet weak var savePlantButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.plantSpeciesTextField.delegate = self
+        self.plantNickNameTextField.delegate = self
+        
     
         // Do any additional setup after loading the view.
     }
@@ -34,13 +38,15 @@ class CreatePlantViewController: UIViewController {
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        }
+        textField.resignFirstResponder()
+        return true
+    }
     var countDownDuration: TimeInterval {
         let h2oFrequency = waterIntervalDatePicker.countDownDuration
         return h2oFrequency
     }
   
+    
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         
